@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Duyurular";
+const pageDescription = "DENKLEM mobil uygulamasıyla ilgili en son haberler, güncellemeler ve önemli duyurular.";
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
+    <div class="prose prose-lg max-w-none dark:prose-invert">
+      <p class="text-center mb-8">
+        DENKLEM uygulamasıyla ilgili en son gelişmeleri ve duyuruları buradan takip edebilirsiniz.
+      </p>
+      
+      <div class="space-y-6">
+        <div class="card bg-base-200 shadow-md">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-semibold">Yeni Sürüm Yayınlandı: v1.1.0</h2>
+            <p class="text-sm text-base-content/70">15 Temmuz 2024</p>
+            <p>DENKLEM mobil uygulamasının yeni sürümü (v1.1.0) yayınlandı! Bu sürümde performans iyileştirmeleri ve küçük hata düzeltmeleri bulunmaktadır. Hemen indirin veya güncelleyin.</p>
+            <div class="card-actions justify-end">
+              <a href="/blog/yeni-surum-v1-1-0-detaylari" class="btn btn-ghost btn-sm">Detaylar</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-200 shadow-md">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-semibold">Webinar: Arabuluculukta Etkili Hesaplama</h2>
+            <p class="text-sm text-base-content/70">1 Ağustos 2024 - Saat 14:00</p>
+            <p>Arabuluculuk süreçlerinde doğru ve hızlı hesaplamanın püf noktalarını ele alacağımız ücretsiz webinarımıza davetlisiniz. DENKLEM uygulamasının pratik kullanımını da göstereceğiz.</p>
+            <div class="card-actions justify-end">
+               <a href="#" class="btn btn-primary btn-sm">Kayıt Ol</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card bg-base-200 shadow-md">
+          <div class="card-body">
+            <h2 class="card-title text-xl font-semibold">DENKLEM App Store ve Google Play'de!</h2>
+            <p class="text-sm text-base-content/70">1 Haziran 2024</p>
+            <p>DENKLEM mobil uygulamamız artık App Store ve Google Play Store üzerinden indirilebilir! Arabuluculuk hesaplamalarınızı kolaylaştırmak için hemen indirin.</p>
+             <div class="card-actions justify-start">
+              <a href="https://apps.apple.com/app/id<APPLE_APP_ID>" target="_blank" class="btn btn-outline btn-sm">App Store</a>
+              <a href="https://play.google.com/store/apps/details?id=<GOOGLE_PLAY_ID>" target="_blank" class="btn btn-outline btn-sm">Google Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

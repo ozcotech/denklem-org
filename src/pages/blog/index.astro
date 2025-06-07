@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Blog";
+const pageDescription = "Arabuluculuk, yasal ücret hesaplamaları ve DENKLEM uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler.";
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
+    <div class="prose prose-lg max-w-none dark:prose-invert">
+      <p class="text-center">
+        Yakında burada arabuluculuk süreçleri, ücret hesaplama yöntemleri ve DENKLEM mobil uygulamasındaki yenilikler hakkında bilgilendirici yazılar bulabileceksiniz. Lütfen daha sonra tekrar kontrol edin!
+      </p>
+      <!-- Örnek Blog Post Kartları (Dinamik içerik eklendiğinde burası güncellenecek) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Arabuluculukta Anlaşmanın Önemi</h2>
+            <p>Arabuluculuk sürecinde anlaşmaya varmanın taraflar için faydaları nelerdir? Detaylı bir bakış.</p>
+            <div class="card-actions justify-end">
+              <a href="#" class="btn btn-primary btn-sm">Devamını Oku</a>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">DENKLEM Uygulaması Nasıl Kullanılır?</h2>
+            <p>Adım adım DENKLEM mobil uygulaması ile arabuluculuk ücreti hesaplama rehberi.</p>
+            <div class="card-actions justify-end">
+              <a href="#" class="btn btn-primary btn-sm">Devamını Oku</a>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-title">Güncel Arabuluculuk Mevzuatı</h2>
+            <p>Arabuluculuk ile ilgili son yasal değişiklikler ve bunların hesaplamalara etkisi.</p>
+            <div class="card-actions justify-end">
+              <a href="#" class="btn btn-primary btn-sm">Devamını Oku</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

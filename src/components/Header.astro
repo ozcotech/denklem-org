@@ -1,0 +1,42 @@
+---
+import Navigation from './Navigation.astro';
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="bg-base-100 shadow-sm border-b border-base-200">
+  <div class="container">
+    <div class="navbar px-0">
+      <!-- Logo -->
+      <div class="navbar-start">
+        <a href="/" class="btn btn-ghost text-xl font-bold text-primary">
+          Denklem.org
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="navbar-center hidden lg:flex">
+        <Navigation />
+      </div>
+      
+      <!-- Theme Toggle + Mobile menu -->
+      <div class="navbar-end">
+        <!-- Theme Toggle Button -->
+        <ThemeToggle />
+        
+        <!-- Mobile menu button -->
+        <div class="lg:hidden ml-2">
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </div>
+            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
+              <Navigation mobile={true} />
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

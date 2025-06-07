@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const pageTitle = "Hakkımızda";
+const pageDescription = "DENKLEM mobil uygulaması ve ekibimiz hakkında daha fazla bilgi edinin. Misyonumuz, vizyonumuz ve değerlerimiz.";
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
+    <div class="prose prose-lg max-w-none dark:prose-invert">
+      <p>
+        DENKLEM, arabuluculuk süreçlerinde hesaplamaların karmaşıklığını ortadan kaldırmak ve süreci kolaylaştırmak amacıyla geliştirilmiş bir mobil uygulamadır. Misyonumuz, arabulucuların ve tarafların adil ve hızlı bir şekilde uzlaşmalarına yardımcı olacak kullanıcı dostu bir araç sunmaktır.
+      </p>
+      <h2 class="text-2xl font-semibold mt-8 mb-4">Vizyonumuz</h2>
+      <p>
+        Arabuluculuk alanında teknolojik çözümlerle fark yaratarak, Türkiye'de ve uluslararası alanda en çok tercih edilen hesaplama aracı olmayı hedefliyoruz. Sürekli gelişim ve yenilikçilik anlayışıyla, kullanıcılarımızın ihtiyaçlarına en iyi şekilde cevap vermeyi amaçlıyoruz.
+      </p>
+      <h2 class="text-2xl font-semibold mt-8 mb-4">Değerlerimiz</h2>
+      <ul>
+        <li><strong>Kullanıcı Odaklılık:</strong> Kullanıcılarımızın geri bildirimlerini dikkate alarak uygulamamızı sürekli iyileştiriyoruz.</li>
+        <li><strong>Güvenilirlik:</strong> Doğru ve güncel mevzuata uygun hesaplamalar sunarak güvenilir bir platform sağlıyoruz.</li>
+        <li><strong>Erişilebilirlik:</strong> Herkesin kolayca kullanabileceği, anlaşılır ve basit bir arayüz sunuyoruz.</li>
+        <li><strong>Şeffaflık:</strong> Hesaplama yöntemlerimizde ve politikalarımızda şeffaflığı ön planda tutuyoruz.</li>
+      </ul>
+      <h2 class="text-2xl font-semibold mt-8 mb-4">Ekibimiz</h2>
+      <p>
+        DENKLEM uygulaması, alanında uzman yazılımcılar, hukuk danışmanları ve tasarımcılar tarafından geliştirilmektedir. Ekip olarak, arabuluculuk süreçlerine değer katacak yenilikçi çözümler üretmek için çalışıyoruz.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

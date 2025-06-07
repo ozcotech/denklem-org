@@ -1,0 +1,45 @@
+---
+export interface Props {
+  mobile?: boolean;
+}
+
+const { mobile = false } = Astro.props;
+
+const navItems = [
+  { name: 'Ana Sayfa', href: '/' },
+  { name: 'Uygulama Hakkında', href: '/about' },
+  { name: 'Kullanım Rehberi', href: '/blog' },
+  { name: 'Güncellemeler', href: '/announcements' },
+  { name: 'Gizlilik', href: '/privacy' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+{mobile ? (
+  <!-- Mobile Navigation -->
+  {navItems.map((item) => (
+    <li>
+      <a 
+        href={item.href}
+        class={`${currentPath === item.href ? 'active' : ''}`}
+      >
+        {item.name}
+      </a>
+    </li>
+  ))}
+) : (
+  <!-- Desktop Navigation -->
+  <ul class="menu menu-horizontal px-1">
+    {navItems.map((item) => (
+      <li>
+        <a 
+          href={item.href}
+          class={`${currentPath === item.href ? 'active' : ''}`}
+        >
+          {item.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+)}
