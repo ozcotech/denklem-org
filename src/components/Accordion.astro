@@ -1,0 +1,16 @@
+---
+// Accordion.astro: Reusable collapse/accordion component using DaisyUI collapse
+export interface Props {
+  title: string;
+  open?: boolean;
+}
+const { title, open = false } = Astro.props;
+---
+<details class="collapse collapse-arrow bg-base-100 border border-base-200 rounded-box" open={open}>
+  <summary class="collapse-title text-base-content text-lg font-medium">
+    {title}
+  </summary>
+  <div class="collapse-content mt-2">
+    <slot />
+  </div>
+</details>
