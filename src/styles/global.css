@@ -33,16 +33,20 @@
     transform: scale(1.1);
   }
 
-  /* Centralized feature card styles */
+  /* General card styles */
   .card {
     transition: transform 0.3s ease;
-    aspect-ratio: 3/4;
     overflow: hidden;
     border-radius: 1rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
   .card:hover {
     transform: scale(1.05);
+  }
+  
+  /* Feature cards specific styles (homepage only) */
+  .feature-card {
+    aspect-ratio: 3/4;
   }
 
   /* Button inflate effect on hover and press */
