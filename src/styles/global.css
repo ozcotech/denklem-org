@@ -55,6 +55,21 @@
   .btn-scale:active {
     transform: scale(0.95);
   }
+
+  /* Feature card background opacity in dark mode */
+  html[data-theme='dark'] .card .bg-base-200 {
+    background-color: rgba(124, 124, 124, 0.1);
+  }
+
+  /* Gradient text for hero title and footer */
+  .gradient-text {
+    display: inline-block;  
+    background: linear-gradient(to right, #f44ee9, #5c69f6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 @layer utilities {

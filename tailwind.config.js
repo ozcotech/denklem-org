@@ -25,4 +25,5 @@ module.exports = {
     darkTheme: "dark",
     logs: true,
   },
+  
 }
