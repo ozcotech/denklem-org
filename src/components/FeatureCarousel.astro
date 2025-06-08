@@ -1,0 +1,114 @@
+---
+import home from '../assets/home-screen.png?url';
+import disputeCategory from '../assets/dispute-category-screen.png?url';
+import disputeType from '../assets/dispute-type-screen.png?url';
+import inputScreen from '../assets/input-screen.png?url';
+import result1 from '../assets/result-screen-1.png?url';
+import timeScreen from '../assets/time-screen.png?url';
+import smmScreen from '../assets/smm-screen.png?url';
+/* BU DOSYA SİLİNECEK!!!!*/
+const slides: string[] = [
+  home,
+  disputeCategory,
+  disputeType,
+  inputScreen,
+  result1,
+  timeScreen,
+  smmScreen,
+];
+--- 
+
+<div class="feature-carousel my-16"> {/* Changed mb-16 to my-16 for top and bottom margin */}
+  {/* <h2 class="text-3xl font-bold text-center mb-8">Uygulama Ekranları</h2> */}
+  <div class="swiper mySwiper w-full max-w-[280px] h-[600px] mx-auto relative shadow-2xl">
+    <div class="swiper-wrapper">
+      {slides.map((src, index) => (
+        <div class="swiper-slide flex items-center justify-center">
+          <img 
+            src={src} 
+            alt={`Uygulama Ekranı ${index + 1}`} 
+            class="object-contain w-full h-full" 
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+    {/* <div class="swiper-button-prev"></div> */}
+    {/* <div class="swiper-button-next"></div> */}
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<!-- Swiper CSS -->
+<style>
+  @import 'swiper/css';
+  @import 'swiper/css/navigation';
+  @import 'swiper/css/pagination';
+  @import 'swiper/css/autoplay';
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Pagination, Autoplay, EffectCoverflow } from 'swiper/modules'; // Added EffectCoverflow
+
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Swiper
+    const swiper = new Swiper('.mySwiper', {
+      modules: [Pagination, Autoplay, EffectCoverflow], // Added EffectCoverflow
+      effect: 'coverflow', // Set effect to coverflow
+      grabCursor: true,
+      centeredSlides: true, // Center the active slide
+      slidesPerView: 'auto', // Show multiple slides, adjust as needed (e.g., 3)
+      loop: true, // Enable continuous loop
+      coverflowEffect: {
+        rotate: 50, // Rotation of side slides
+        stretch: 0, // Stretch space between slides (in px)
+        depth: 100, // Depth offset of side slides (closer = larger)
+        modifier: 1, // Effect multiplier
+        slideShadows: true, // Enable slide shadows
+      },
+      spaceBetween: 0, // Reset from previous attempts, coverflow handles spacing
+      
+      // Auto play
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      
+      // Navigation arrows
+      // navigation: {
+      //   nextEl: '.swiper-button-next',
+      //   prevEl: '.swiper-button-prev',
+      // },
+      
+      // Pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      
+      // Responsive breakpoints
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        },
+        1024: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
+      },
+      
+      // Keyboard control
+      keyboard: {
+        enabled: true,
+      },
+    });
+  });
+</script>
