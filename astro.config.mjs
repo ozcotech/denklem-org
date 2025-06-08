@@ -7,9 +7,11 @@ import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
+
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://denklem.org', 
+  site: 'https://denklem.org',
+
   integrations: [
     tailwind({
       applyBaseStyles: false, // Disable base styles to avoid conflicts with DaisyUI
@@ -20,5 +22,6 @@ export default defineConfig({
       rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
     }),
     sitemap()
-  ]
+  ],
+
 });
