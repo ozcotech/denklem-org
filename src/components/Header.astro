@@ -1,6 +1,7 @@
 ---
 import Navigation from './Navigation.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import iconUrl from '../assets/icon.png?url';
 ---
 
 <header class="bg-base-100 shadow-sm border-b border-base-200">
@@ -8,33 +9,28 @@ import ThemeToggle from './ThemeToggle.astro';
     <div class="navbar px-0">
       <!-- Logo -->
       <div class="navbar-start">
-        <a href="/" class="btn btn-ghost text-xl font-bold text-primary">
-          Denklem.org
+        <a href="/" class="btn btn-ghost p-0">
+          <img src={iconUrl} alt="Denklem" class="w-10 h-10 rounded-lg" />
         </a>
       </div>
       
-      <!-- Desktop Navigation -->
-      <div class="navbar-center hidden lg:flex">
-        <Navigation />
-      </div>
-      
+      <!-- Desktop navigation removed -->
+
       <!-- Theme Toggle + Mobile menu -->
       <div class="navbar-end">
         <!-- Theme Toggle Button -->
         <ThemeToggle />
         
-        <!-- Mobile menu button -->
-        <div class="lg:hidden ml-2">
-          <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </div>
-            <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
-              <Navigation mobile={true} />
-            </ul>
+        <!-- Hamburger menu on all screen sizes -->
+        <div class="dropdown dropdown-end ml-2">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
           </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50">
+            <Navigation mobile={true} />
+          </ul>
         </div>
       </div>
     </div>

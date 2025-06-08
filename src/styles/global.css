@@ -32,6 +32,29 @@
   #theme-toggle:hover {
     transform: scale(1.1);
   }
+
+  /* Centralized feature card styles */
+  .card {
+    transition: transform 0.3s ease;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  /* Button inflate effect on hover and press */
+  .btn-scale {
+    transition: transform 0.2s ease;
+  }
+  .btn-scale:hover {
+    transform: scale(1.05);
+  }
+  .btn-scale:active {
+    transform: scale(0.95);
+  }
 }
 
 @layer utilities {

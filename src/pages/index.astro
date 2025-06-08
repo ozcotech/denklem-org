@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout 
-  title="DENKLEM - Arabuluculuk Ücret Hesaplama Uygulaması"
+  title="DENKLEM - Arabuluculuk Ücreti Hesaplama Uygulaması"
   description="DENKLEM mobil uygulaması ile arabuluculuk ücretlerini kolayca hesaplayın. Süre takibi ve serbest meslek makbuzu hesaplaması da dahil."
 >
   <!-- Hero Section -->
@@ -11,17 +11,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container py-20">
       <div class="text-center">
         <h1 class="text-5xl font-bold mb-6">
-          DENKLEM Uygulamasına Hoş Geldiniz
+          DENKLEM
         </h1>
         <p class="text-xl mb-8 max-w-2xl mx-auto">
-          Arabuluculuk ücret hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+          Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
         </p>
-        <div class="flex gap-4 justify-center flex-wrap">
-          <a href="https://github.com/ozcotech/DENKLEM" target="_blank" class="btn btn-accent btn-lg">
+        <div class="flex justify-center">
+          <a
+            href="https://apps.apple.com/tr/app/denklem/id6746580824"
+            target="_blank"
+            class="btn btn-outline border-white text-white bg-transparent w-full max-w-xs rounded-xl flex items-center justify-center gap-2 btn-scale"
+          >
             📱 Uygulamayı İndir
-          </a>
-          <a href="/about" class="btn btn-outline btn-lg">
-            Nasıl Çalışır?
           </a>
         </div>
       </div>
@@ -40,54 +41,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Feature 1 -->
-        <div class="card bg-base-100 shadow-lg">
+        <a href="/blog" class="card bg-base-100 shadow-lg no-underline">
           <div class="card-body text-center">
             <div class="text-4xl mb-4">⚖️</div>
             <h3 class="card-title justify-center">Ücret Hesaplama</h3>
             <p>Anlaşma ve anlaşmama durumlarına göre arabuluculuk ücretlerini otomatik hesaplama</p>
-            <div class="card-actions justify-center">
-              <a href="/blog" class="btn btn-primary">Detaylar</a>
-            </div>
           </div>
-        </div>
+        </a>
 
         <!-- Feature 2 -->
-        <div class="card bg-base-100 shadow-lg">
+        <a href="/announcements" class="card bg-base-100 shadow-lg no-underline">
           <div class="card-body text-center">
             <div class="text-4xl mb-4">⏱️</div>
             <h3 class="card-title justify-center">Süre Takibi</h3>
             <p>Arabuluculuk sürecinin belirli süreli takibi ve süre hesaplamaları</p>
-            <div class="card-actions justify-center">
-              <a href="/announcements" class="btn btn-primary">Öğren</a>
-            </div>
           </div>
-        </div>
+        </a>
 
         <!-- Feature 3 -->
-        <div class="card bg-base-100 shadow-lg">
+        <a href="/about" class="card bg-base-100 shadow-lg no-underline">
           <div class="card-body text-center">
             <div class="text-4xl mb-4">🧾</div>
             <h3 class="card-title justify-center">Makbuz Hesaplama</h3>
             <p>Serbest meslek makbuzu hesaplaması ve fatura oluşturma bilgileri</p>
-            <div class="card-actions justify-center">
-              <a href="/about" class="btn btn-primary">Kullan</a>
-            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="bg-base-200 py-16">
-    <div class="container text-center">
-      <h2 class="text-3xl font-bold mb-4">Hemen Başlayın</h2>
-      <p class="text-lg mb-8 text-base-content/70">
-        Arabuluculuk süreçlerinizi kolaylaştırmak için DENKLEM'i indirin
-      </p>
-      <a href="https://github.com/ozcotech/DENKLEM" target="_blank" class="btn btn-primary btn-lg">
-        📲 GitHub'dan İndir
-      </a>
+  <section class="bg-gradient-to-r from-primary to-secondary text-primary-content py-16">
+    <div class="container">
+      <div class="container text-center">
+        <h2 class="text-3xl font-bold mb-4">Hemen Başlayın</h2>
+        <p class="text-lg mb-8 text-base-content/70">
+          Arabuluculuk süreçlerinizi kolaylaştırmak için DENKLEM'i indirin
+        </p>
+        <div class="flex justify-center">
+          <a
+            href="https://apps.apple.com/tr/app/denklem/id6746580824"
+            target="_blank"
+            class="btn btn-outline border-white text-white bg-transparent w-full max-w-xs rounded-xl flex items-center justify-center gap-2 btn-scale"
+          >
+            📲 Uygulamayı İndir
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
