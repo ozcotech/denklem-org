@@ -86,6 +86,14 @@
     border-color: var(--color-base-content);
     color: var(--color-base-content);
   }
+
+  /* Gradient left border for email contact boxes - creates colorful left border using linear gradient */
+  .gradient-border-left {
+    border-left: 4px solid transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to bottom, #f44ee9, #5c69f6);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+  }
 }
 
 @layer utilities {
