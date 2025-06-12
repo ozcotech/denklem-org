@@ -74,12 +74,24 @@
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
+
+  /* button border color in light mode */
+  html[data-theme='light'] .download-btn {
+    border-color: #242525; /* Blue */
+    color: #35383d; /* Text color blue in light mode */
+  }
+
+  /* button border color in dark mode (no change) */
+  html[data-theme='dark'] .download-btn {
+    border-color: var(--color-base-content);
+    color: var(--color-base-content);
+  }
 }
 
 @layer utilities {
   /* Override DaisyUI default dark theme variables */
   html[data-theme='dark'] {
-    --color-base-100: #595b5d;
+    --color-base-100: #1E1E2E ;
     --color-base-content: #93C5FD;
     --color-base-200: #595b5d;
   }
