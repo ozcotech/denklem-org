@@ -33,6 +33,85 @@
     transform: scale(1.1);
   }
 
+  /* Neumorphic circle toggle:
+     - highlight at top-left (white)
+     - subtle shadow at bottom-right (grey) */
+  #theme-toggle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.8),
+       4px  4px 8px rgba(0,   0,   0,   0.1);
+  }
+
+  #theme-toggle:active {
+    /* pressed (inset) effect */
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
+  }
+
+  /* Dark mode adaptation:
+     keep same neumorphic style but adjust colors */
+  html[data-theme='dark'] #theme-toggle {
+    /* In dark mode, the button background should match the theme background. */
+    background: var(--b2) !important;    /* DaisyUI dark-mode background */
+    color:    var(--bc) !important;      /* base-content */
+    /* Neumorphic shadow should be preserved or slightly altered as desired */
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.1),
+       4px  4px 8px rgba(0,   0,   0,   0.6);
+  }
+
+  html[data-theme='dark'] #theme-toggle:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
+  }
+
+  /* Neumorphic circle for Hamburger Menu Button */
+  #hamburger-menu-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.8),
+       4px  4px 8px rgba(0,   0,   0,   0.1);
+    /* Ensure icon is centered if needed */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #hamburger-menu-button:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
+  }
+
+  html[data-theme='dark'] #hamburger-menu-button {
+    background: var(--b2) !important;
+    color: var(--bc) !important; /* This line sets the color of the SVG icon. */
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.1),
+       4px  4px 8px rgba(0,   0,   0,   0.6);
+  }
+
+  html[data-theme='dark'] #hamburger-menu-button:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
+  }
+
   /* General card styles */
   .card {
     transition: transform 0.3s ease;
@@ -81,10 +160,45 @@
     color: #35383d; /* Text color blue in light mode */
   }
 
-  /* button border color in dark mode (no change) */
+  /* Neumorphic style for Download App button */
+  .download-btn {
+    padding: 0.7em 1.7em; /* Örnek padding, isteğe bağlı */
+    font-size: 1rem; /* Örnek font boyutu, isteğe bağlı */
+    border-radius: 0.75rem; /* Dikdörtgen için uygun bir radius */
+    background: #ffffff;
+    border: none; /* Neumorphic style usually defines its own boundaries or does not use them at all. */
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.8), /* Upper left emphasis */
+       4px  4px 8px rgba(0,   0,   0,   0.1);   /* Lower right shadow */
+    color: #090909; /* Light mode text color */
+    /* Align the icon and text if necessary */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Icon and text spacing */
+  }
+
+  .download-btn:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
+    color: #666; /* Pressed text color */
+  }
+
   html[data-theme='dark'] .download-btn {
-    border-color: var(--color-base-content);
-    color: var(--color-base-content);
+    background: var(--b2) !important; /* Dark mode background */
+    color: var(--bc) !important;      /* Dark mode text color */
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.1), /* Dark mode upper left emphasis */
+       4px  4px 8px rgba(0,   0,   0,   0.6);   /* Dark mode lower right shadow */
+  }
+
+  html[data-theme='dark'] .download-btn:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
   }
 
   /* Gradient left border for email contact boxes - creates colorful left border using linear gradient */
