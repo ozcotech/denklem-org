@@ -3,7 +3,7 @@ import Accordion from './Accordion.astro';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-base-200 mt-auto">
+<footer class="bg-base-100 mt-auto">
   <div class="container py-8">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Logo and Description -->
@@ -33,7 +33,7 @@ const currentYear = new Date().getFullYear();
             <li>
               <button
                 class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition"
-                onclick="navigator.clipboard.writeText('info@denklem.org')"
+                data-email="info@denklem.org"
               >
                 info@denklem.org
               </button>
@@ -41,7 +41,7 @@ const currentYear = new Date().getFullYear();
             <li>
               <button
                 class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition"
-                onclick="navigator.clipboard.writeText('info@ozco.studio')"
+                data-email="info@ozco.studio"
               >
                 info@ozco.studio
               </button>
@@ -79,12 +79,29 @@ const currentYear = new Date().getFullYear();
   </div>
 
   <script is:inline>
+    // Email copy functionality
     document.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[onclick*="clipboard.writeText"]');
+      const btn = e.target.closest('button[data-email]');
       if (!btn) return;
-      const toast = document.getElementById('copy-toast');
-      toast.classList.remove('opacity-0');
-      setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      navigator.clipboard.writeText(btn.dataset.email).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      });
+    });
+
+    // Click outside to close accordions in footer
+    document.addEventListener('click', function(event) {
+      // Select all ‘details’ elements (accordions) in the footer
+      const accordions = document.querySelectorAll('footer details.collapse');
+      
+      accordions.forEach(accordion => {
+        // If the accordion is open and the click is outside the accordion
+        if (accordion.hasAttribute('open') && !accordion.contains(event.target)) {
+          // Close the accordion
+          accordion.removeAttribute('open');
+        }
+      });
     });
   </script>
 </footer>

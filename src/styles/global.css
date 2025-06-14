@@ -208,6 +208,29 @@
     background-clip: padding-box, border-box;
     background-origin: padding-box, border-box;
   }
+
+  /* Neumorphic style for Feature Cards */
+  /* This class should be used alongside DaisyUI's .card class */
+  .neumorphic-feature-card {
+    /* Light mode neumorphic appearance */
+    background-color: #ffffff; /* The primary color of the card is white. */
+    /* Upper left highlight (white), lower right shadow (light gray) */
+    box-shadow:
+      -8px -8px 16px rgba(255, 255, 255, 0.85),
+       8px  8px 16px rgba(0,   0,   0,   0.12);
+    border: none; /* Remove any border that may come from DaisyUI's .card class */
+    /* The .card class already provides border-radius, overflow, and transition */
+  }
+
+  /* Dark mode for neumorphic feature card */
+  html[data-theme='dark'] .neumorphic-feature-card {
+    /* In dark mode, the main color of the card should be the base-100 color of the theme. */
+    background-color: var(--b1);
+    /* Dark mode shadows */
+    box-shadow:
+      -8px -8px 16px rgba(255, 255, 255, 0.07),
+       8px  8px 16px rgba(0,   0,   0,   0.5);
+  }
 }
 
 @layer utilities {
