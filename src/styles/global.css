@@ -162,9 +162,9 @@
 
   /* Neumorphic style for Download App button */
   .download-btn {
-    padding: 0.7em 1.7em; /* Örnek padding, isteğe bağlı */
-    font-size: 1rem; /* Örnek font boyutu, isteğe bağlı */
-    border-radius: 0.75rem; /* Dikdörtgen için uygun bir radius */
+    padding: 0.7em 1.7em; /* Sample padding, optional */
+    font-size: 1rem; /* Sample font size, optional */
+    border-radius: 0.75rem; /* Suitable radius for rectangle */
     background: #ffffff;
     border: none; /* Neumorphic style usually defines its own boundaries or does not use them at all. */
     cursor: pointer;
@@ -230,6 +230,49 @@
     box-shadow:
       -8px -8px 16px rgba(255, 255, 255, 0.07),
        8px  8px 16px rgba(0,   0,   0,   0.5);
+  }
+
+  /* Light mode: make the feature card wrapper white and add a shadow */
+  html[data-theme='light'] .neumorphic-feature-card .card-body > div {
+    background: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* Dark mode: make the feature card wrapper match the page background and add shadow */
+  html[data-theme='dark'] .neumorphic-feature-card .card-body > div {
+    background: var(--color-base-100) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+
+  /* Blog page cards: override base-200 background to match neumorphic style */
+  html[data-theme='light'] .card.bg-base-200 {
+    background: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+  }
+  html[data-theme='dark'] .card.bg-base-200 {
+    background: var(--color-base-100) !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4) !important;
+  }
+
+  /* Privacy page card: subtle grey shadow in light mode and white shadow in dark mode, no hover animation */
+  html[data-theme='light'] .privacy-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+  }
+  html[data-theme='dark'] .privacy-card {
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.4) !important;
+  }
+  .privacy-card:hover {
+    transform: none !important;
+  }
+
+  /* About page cards: subtle shadow for bg-base-100 cards */
+  html[data-theme='light'] .card.bg-base-100 {
+    background: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1) !important;
+  }
+  html[data-theme='dark'] .card.bg-base-100 {
+    background: var(--color-base-100) !important;
+    box-shadow: 0 4px 6px rgba(1, 1, 1, 0.4) !important;
   }
 }
 
