@@ -42,7 +42,7 @@ DENKLEM is also available as a mobile app on the App Store.
 ### 🔐 Privacy
 
 DENKLEM never collects, stores, or transmits personal data.  
-See [Privacy Policy](/privacy).
+
 
 ### 📄 License
 
