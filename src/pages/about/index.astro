@@ -8,6 +8,7 @@ import inputScreen from '../../assets/input-screen.png?url';
 import resultScreen from '../../assets/result-screen.png?url';
 import timeScreen from '../../assets/time-screen.png?url';
 import smmScreen from '../../assets/smm-screen.png?url';
+import FlipCard from '../../components/FlipCard.astro';
 
 const pageTitle = "Kullanım Rehberi";
 const pageDescription = "Uygulamanın kullanım rehberi ve ekran tanımları";
@@ -15,105 +16,55 @@ const pageDescription = "Uygulamanın kullanım rehberi ve ekran tanımları";
 <BaseLayout title={pageTitle} description={pageDescription}>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6 text-center">Kullanım Rehberi</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-      <!-- Row 1: Text then Image -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <p class="text-center text-xl font-medium">Giriş Ekranı<br>(Programı Başlatmak İçin İlk Adım)</p>
-        <p class="text-justify mt-4">Giriş ekranı, uygulamanın açılışında kullanıcıyı karşılayan ilk ekrandır. Kullanıcı, bu ekranda oturum açarak uygulamanın temel fonksiyonlarına erişim sağlar. Başarılı bir girişin ardından, alt navigasyon bardaki “Ana Sayfa” sekmesine geçildiğinde kullanıcı doğrudan uyuşmazlık kategorisi ekranına yönlendirilir ve tekrar giriş ekranına dönmez. Ancak kullanıcı, navigasyon bardaki “Mevzuat” veya “Hakkında” sekmelerini ziyaret edip ardından tekrar “Ana Sayfa”ya tıkladığında giriş ekranı yeniden görüntülenebilir.</p>
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={homeScreen} alt="Giriş Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <!-- Row 2: Image then Text -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={disputeCategoryScreen} alt="Uyuşmazlık Kategorisi Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex flex-col items-center justify-start w-[400px] h-[869px] overflow-y-auto space-y-4">
-        <h2 class="text-xl font-bold text-center">Uyuşmazlık Kategorisi Ekranı</h2>
-        <p class="text-justify">
-          Bu ekranda, arabuluculuk konusu para olan uyuşmazlıkları kolayca seçebilir ve hesaplamalarınızı çoğunlukla bu yol üzerinden gerçekleştirebilirsiniz. Para içeren uyuşmazlıklar, kullanıcılar tarafından en çok tercih edilen seçenek olup, hesaplamalarınızda hızlı ve doğru sonuçlar almanızı sağlar.
-        </p>
-        <h2 class="text-xl font-bold text-center">Diğer Hesaplamalar Ekranı</h2>
-        <p class="text-justify">
-          Bu bölümde yer alan <strong>Süre Hesaplama</strong> ve <strong>SMM (Serbest Meslek Makbuzu) Hesaplama</strong> butonları aşağıdaki işlevleri sunar:
-        </p>
-        <ul class="list-disc list-inside text-justify">
-          <li>
-            <span class="font-semibold">Süre Hesaplama:</span> Süre Hesaplama butonuna tıkladığınızda, görev tarihini belirleyerek veya atandığınızda, girdiğiniz görev tarihi ve seçtiğiniz uyuşmazlık türüne göre ilgili süreler otomatik olarak hesaplanır ve tek bir ekranda görüntülenir. Arabuluculuk süreçleri sınırlı ve belirli süreli olduğundan, bu özellik süreç yönetiminizi kolaylaştırır.
-          </li>
-          <li>
-            <span class="font-semibold">SMM Hesaplama:</span> SMM Hesaplama butonu ile, vergi türüne ve mükellefiyet tipine (gerçek veya tüzel kişi) göre makbuz hesaplamalarını kolayca yapabilirsiniz. Tüm sonuçlar tek bir ekranda sunulur.
-          </li>
-        </ul>
-        <div class="mt-2 p-3 rounded warning-box text-sm font-medium w-full text-justify">
-          <strong>Uyarı:</strong> Bu hesaplamalarda tevkifat sınırı gözetilmemektedir. Tevkifat oranları ve sorumlulukları yıllara ve mevzuata göre değişiklik gösterebilir. Lütfen güncel mevzuatı kontrol etmeyi unutmayınız.
-        </div>
-      </div>
-      <!-- Row 3: Text then Image -->
-      <div class="card bg-base-100 p-6 shadow-lg flex flex-col items-center justify-center w-[400px] h-[869px]">
-        <h2 class="text-xl font-bold text-center mb-2">Anlaşma Durumu Ekranı</h2>
-        <p class="text-justify">
-        Bu ekranda, arabuluculuk sürecinin “anlaşma” veya “anlaşmama” ile sonuçlandığını hızlıca belirleyebilmeniz için pratik bir seçim menüsü sunulmaktadır. 
-        Buton içerisindeki listeyi yukarı veya aşağı kaydırarak, sürecin sonucunu seçebilirsiniz. 
-        Bu seçim, sonraki hesaplama ve işlemler için temel kriter olarak kullanılır.
-        </p>
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={agreementStatusScreen} alt="Anlaşma Durumu Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <!-- Row 4: Image then Text -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={disputeTypeScreen} alt="Uyuşmazlık Türü Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <p class="text-center text-xl font-medium">Uyuşmazlık Türü Ekranı</p>
-        <p class="text-justify mt-4">Bu ekranda, toplamda yedi farklı uyuşmazlık türü için hesaplama başlatabilirsiniz. Özellikle “Kira Hukuku”, “Komşuluk Hakkı Hukuku” ve “Kat Mülkiyeti Kanunundan Kaynaklanan Uyuşmazlıklar”, hesaplama kriterleri aynı olduğu için tek bir buton üzerinden seçilebilmektedir.
-        İlgili butonlardan birini seçerek, arabuluculuk sürecine uygun hesaplama kriterinizi kolayca oluşturabilirsiniz.</p>
-      </div>
-      <!-- Row 5: Text then Image -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <p class="text-center text-xl font-medium">Uyuşmazlık Bilgileri Ekranı</p>
-        <p class="text-justify mt-4">
-          Bu ekranda, seçtiğiniz uyuşmazlık türü görüntülenir ve hesaplama işlemleri için gerekli bilgiler girilebilir. Anlaşma sağlandıysa, “Anlaşılan Miktar” ve “Taraf Sayısı” alanlarını doldurarak arabuluculuk ücretini hızlıca hesaplayabilirsiniz. Anlaşma sağlanamadıysa, yalnızca “Taraf Sayısı” bilgisini girerek de hesaplama yapmanız mümkündür. Böylece her iki durumda da hızlı ve doğru sonuçlara ulaşabilirsiniz.
-        </p>
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={inputScreen} alt="Uyuşmazlık Bilgileri Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <!-- Row 6: Image then Text -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={resultScreen} alt="Sonuç Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <p class="text-center text-xl font-medium">Sonuç Ekranı</p>
-        <p class="text-justify mt-4">
-          Bu ekranda, gerçekleştirdiğiniz hesaplamanın sonucu ayrıntılı olarak görüntülenir. Dava şartı uyuşmazlıklarda ve anlaşma sağlanamadığı durumlarda, arabuluculuk ücretiyle birlikte ilgili Serbest Meslek Makbuzu (SMM) da otomatik olarak düzenlenir ve gösterilir.  
-          Eğer süreç anlaşmayla sonuçlandıysa, seçilen uyuşmazlık türüne göre yalnızca arabuluculuk ücreti sonucu sunulur. Böylece her iki durumda da gerekli tüm bilgiler kullanıcıya açık ve anlaşılır şekilde iletilir.
-        </p>
-      </div>
-      <!-- Row 7: Text then Image -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <p class="text-center text-xl font-medium">Süre Hesaplama</p>
-        <p class="text-justify mt-4">
-          Süre Hesaplama ekranında, sistem varsayılan olarak bugünün tarihini seçili şekilde getirir. Dilerseniz tarih seçimi alanına tıklayarak, açılan takvim üzerinden önceki veya sonraki bir tarihi seçebilirsiniz. Seçilen tarihe göre, ilgili uyuşmazlık türlerine ait tüm süreler otomatik olarak hesaplanır ve toplu şekilde ekranda görüntülenir. Bu özellik, sürecin zaman yönetimini pratik ve hatasız şekilde gerçekleştirmenizi sağlar.
-        </p>
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={timeScreen} alt="Süre Hesaplama" class="object-contain w-full h-full" />
-      </div>
-      <!-- Row 8: Image then Text -->
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-        <img src={smmScreen} alt="SMM Hesaplama Ekranı" class="object-contain w-full h-full" />
-      </div>
-      <div class="card bg-base-100 p-6 shadow-lg flex items-center justify-center w-[400px] h-[869px]">
-          <p class="text-center text-xl font-medium">SMM Hesaplama Ekranı</p>
-          <p class="text-justify mt-4">
-            SMM Hesaplama ekranında, hesaplanacak arabuluculuk ücreti ilgili alana girildikten sonra, istenilen hesaplama türü (vergi türü) seçilebilir. Sonuçlar, hem gerçek kişiler hem de tüzel kişiler için ayrı ayrı tablo halinde sunulur. Böylece, meslek makbuzu düzenlemesi için gerekli tüm bilgiler pratik ve anlaşılır şekilde kullanıcıya aktarılır.
-          </p>
-          <div class="mt-2 p-3 rounded warning-box text-sm font-medium w-full text-justify">
-          <strong>Uyarı:</strong> Bu hesaplamalarda tevkifat sınırı gözetilmemektedir. Tevkifat oranları ve sorumlulukları yıllara ve mevzuata göre değişiklik gösterebilir. Lütfen güncel mevzuatı kontrol etmeyi unutmayınız.
-        </div>
-      </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+      <FlipCard
+        front={homeScreen}
+        alt="Giriş Ekranı"
+        title="Giriş Ekranı"
+        description={`Giriş ekranı, uygulamanın açılışında kullanıcıyı karşılayan ilk ekrandır. Kullanıcı, bu ekranda oturum açarak uygulamanın temel fonksiyonlarına erişim sağlar. Başarılı bir girişin ardından, alt navigasyon bardaki 'Ana Sayfa' sekmesine geçildiğinde kullanıcı doğrudan uyuşmazlık kategorisi ekranına yönlendirilir ve tekrar giriş ekranına dönmez. Ancak kullanıcı, navigasyon bardaki 'Mevzuat' veya 'Hakkında' sekmelerini ziyaret edip ardından tekrar 'Ana Sayfa'ya tıkladığında giriş ekranı yeniden görüntülenebilir.`}
+      />
+      <FlipCard
+        front={disputeCategoryScreen}
+        alt="Uyuşmazlık Kategorisi Ekranı"
+        title="Uyuşmazlık Kategorisi Ekranı"
+        description={`Bu ekranda, arabuluculuk konusu para olan uyuşmazlıkları kolayca seçebilir ve hesaplamalarınızı çoğunlukla bu yol üzerinden gerçekleştirebilirsiniz. Para içeren uyuşmazlıklar, kullanıcılar tarafından en çok tercih edilen seçenek olup, hesaplamalarınızda hızlı ve doğru sonuçlar almanızı sağlar. Bu bölümde yer alan Süre Hesaplama ve SMM Hesaplama butonları sayesinde farklı hesaplama modlarına hızlıca erişebilirsiniz.`}
+      />
+      <FlipCard
+        front={agreementStatusScreen}
+        alt="Anlaşma Durumu Ekranı"
+        title="Anlaşma Durumu Ekranı"
+        description={`Bu ekranda, arabuluculuk sürecinin 'anlaşma' veya 'anlaşmama' ile sonuçlandığını hızlıca belirleyebilmeniz için pratik bir seçim menüsü sunulmaktadır. Buton içerisindeki listeyi kaydırarak sürecin sonucunu seçebilirsiniz. Bu seçim, sonraki hesaplama ve işlemler için temel kriter olarak kullanılır.`}
+      />
+      <FlipCard
+        front={disputeTypeScreen}
+        alt="Uyuşmazlık Türü Ekranı"
+        title="Uyuşmazlık Türü Ekranı"
+        description={`Bu ekranda, toplamda yedi farklı uyuşmazlık türü için hesaplama başlatabilirsiniz. Özellikle “Kira Hukuku”, “Komşuluk Hakkı Hukuku” ve “Kat Mülkiyeti Kanunundan Kaynaklanan Uyuşmazlıklar”, hesaplama kriterleri aynı olduğu için tek bir buton üzerinden seçilebilmektedir. İlgili butonlardan birini seçerek, arabuluculuk sürecine uygun hesaplama kriterinizi kolayca oluşturabilirsiniz.`}
+      />
+      <FlipCard
+        front={inputScreen}
+        alt="Uyuşmazlık Bilgileri Ekranı"
+        title="Uyuşmazlık Bilgileri Ekranı"
+        description={`Bu ekranda, seçtiğiniz uyuşmazlık türü görüntülenir ve hesaplama işlemleri için gerekli bilgiler girilebilir. Anlaşma sağlandıysa, 'Anlaşılan Miktar' ve 'Taraf Sayısı' alanlarını doldurarak arabuluculuk ücretini hızlıca hesaplayabilirsiniz. Anlaşma sağlanamadıysa, yalnızca 'Taraf Sayısı' bilgisini girerek de hesaplama yapmanız mümkündür. Böylece her iki durumda da hızlı ve doğru sonuçlara ulaşabilirsiniz.`}
+      />
+      <FlipCard
+        front={resultScreen}
+        alt="Sonuç Ekranı"
+        title="Sonuç Ekranı"
+        description={`Bu ekranda, gerçekleştirdiğiniz hesaplamanın sonucu ayrıntılı olarak görüntülenir. Dava şartı uyuşmazlıklarda ve anlaşma sağlanamadığı durumlarda, arabuluculuk ücretiyle birlikte ilgili Serbest Meslek Makbuzu (SMM) da otomatik olarak düzenlenir ve gösterilir. Eğer süreç anlaşmayla sonuçlandıysa, seçilen uyuşmazlık türüne göre yalnızca arabuluculuk ücreti sonucu sunulur.`}
+      />
+      <FlipCard
+        front={timeScreen}
+        alt="Süre Hesaplama"
+        title="Süre Hesaplama"
+        description={`Süre Hesaplama ekranında, sistem varsayılan olarak bugünün tarihini seçili şekilde getirir. Dilerseniz tarih seçimi alanına tıklayarak, takvim üzerinden önceki veya sonraki bir tarihi seçebilirsiniz. Seçilen tarihe göre, ilgili uyuşmazlık türlerine ait tüm süreler otomatik olarak hesaplanır ve toplu şekilde ekranda görüntülenir.`}
+      />
+      <FlipCard
+        front={smmScreen}
+        alt="SMM Hesaplama Ekranı"
+        title="SMM Hesaplama Ekranı"
+        description={`SMM Hesaplama ekranında, hesaplanacak arabuluculuk ücreti ilgili alana girildikten sonra, istenilen hesaplama türü (vergi türü) seçilebilir. Sonuçlar, hem gerçek kişiler hem de tüzel kişiler için ayrı ayrı tablo halinde sunulur. Böylece, meslek makbuzu düzenlemesi için gerekli tüm bilgiler pratik ve anlaşılır şekilde kullanıcıya aktarılır.`}
+      />
     </div>
   </div>
 </BaseLayout>

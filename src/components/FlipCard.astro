@@ -1,0 +1,20 @@
+---
+export interface Props {
+  front: string;
+  alt?: string;
+  title: string;
+  description: string;
+}
+const { front, alt = '', title, description } = Astro.props;
+---
+<div class="flip-card w-[400px] h-[869px] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src={front} alt={alt} class="object-contain w-full h-full" />
+    </div>
+    <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center">
+      <h2 class="text-xl font-bold mb-4 text-center">{title}</h2>
+      <p class="text-justify text-sm">{description}</p>
+    </div>
+  </div>
+</div>
