@@ -104,10 +104,32 @@ const isHomePage = pathname === '/';
     
     <div class="divider"></div>
     
-    <!-- Copyright -->
-    <div class="text-center text-base-content/70">
-      <p>&copy; {currentYear} DENKLEM. Tüm hakları saklıdır.</p>
-      <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p>
+    <!-- Footer bottom: copyright and hosting info -->
+    <div class="flex flex-col md:flex-row items-center justify-between text-base-content/70 space-y-1 md:space-y-0">
+      <div class="text-center md:text-left">
+        <p>&copy; {currentYear} DENKLEM. Tüm hakları saklıdır.</p>
+        <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p>
+      </div>
+      <div class="security-info flex items-center space-x-4 text-xs">
+        <span id="secure-connection" class="flex items-center space-x-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 security-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-7h-1V7a5.002 5.002 0 00-10 0v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-3a3 3 0 016 0v3H10V7z"/>
+          </svg>
+          <span>Secure Connection (SSL)</span>
+        </span>
+        <span class="hosting-info">
+          Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" class="underline">GitHub Pages</a>
+        </span>
+      </div>
+      <script is:inline>
+        const secureEl = document.getElementById('secure-connection');
+        const iconEl = secureEl.querySelector('.security-icon');
+        if (window.location.protocol === 'https:') {
+          iconEl.classList.add('text-green-500');
+        } else {
+          iconEl.classList.add('text-red-500');
+        }
+      </script>
     </div>
   </div>
 
