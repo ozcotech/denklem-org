@@ -1,0 +1,102 @@
+<!DOCTYPE html><html lang="tr"> <head><meta charset="UTF-8"><meta name="description" content="Arabuluculuk, yasal ücret hesaplamaları ve DENKLEM uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.9.1"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://denklem.org/blog/"><meta property="og:title" content="Blog"><meta property="og:description" content="Arabuluculuk, yasal ücret hesaplamaları ve DENKLEM uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler."><meta property="og:image" content="https://denklem.org/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://denklem.org/blog/"><meta property="twitter:title" content="Blog"><meta property="twitter:description" content="Arabuluculuk, yasal ücret hesaplamaları ve DENKLEM uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler."><meta property="twitter:image" content="https://denklem.org/og-image.jpg"><title>Blog</title><!-- Theme initialization script - runs before page loads --><script>
+      // Initialize theme immediately to prevent flash
+      function getTheme() {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+      
+      const theme = getTheme();
+      document.documentElement.setAttribute('data-theme', theme);
+    </script><link rel="stylesheet" href="/_astro/index.C03l_lJY.css"></head> <body class="min-h-screen flex flex-col bg-base-100 text-base-content"> <header class="bg-base-100 shadow-sm border-b border-base-200"> <div class="container"> <div class="navbar px-0"> <!-- Logo --> <div class="navbar-start"> <a href="/" class="btn btn-ghost p-0"> <img src="/_astro/icon.CVqdht1B.png" alt="Denklem" class="w-10 h-10 rounded-lg"> </a> </div> <!-- Desktop navigation removed --> <!-- Theme Toggle + Mobile menu --> <div class="navbar-end"> <!-- Download button --> <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" id="download-button" aria-label="Download"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"></path> <polyline points="8 12 12 16 16 12"></polyline> <line x1="12" y1="16" x2="12" y2="4"></line> </svg> </a> <!-- Theme Toggle Button --> <button id="theme-toggle" class="btn btn-ghost btn-circle" data-astro-cid-x3pjskd3> <svg id="theme-icon-light" class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18.75a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM5.166 17.834a.75.75 0 001.06 1.06l1.591-1.59a.75.75 0 00-1.06-1.061l-1.591 1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.166 5.106a.75.75 0 00-1.06 1.06l1.59 1.591a.75.75 0 101.061-1.06l-1.59-1.591z" data-astro-cid-x3pjskd3></path> </svg> <svg id="theme-icon-dark" class="w-6 h-6 fill-current hidden" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21c3.73 0 6.955-2.034 8.572-5.005z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (!themeToggle) return;
+    
+    // Set theme function
+    function setTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('theme', themeName); 
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark'; 
+      setTheme(newTheme);
+    });
+  });
+</script> <!-- Hamburger menu on all screen sizes --> <div class="dropdown dropdown-end ml-2"> <div tabindex="0" role="button" class="btn btn-ghost" id="hamburger-menu-button"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </div> <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"> <!-- Mobile Navigation -->
+  <li><a href="/" class>Ana Sayfa</a></li><li><a href="/about" class>Uygulama Hakkında</a></li><li><a href="/blog" class>Blog</a></li><li><a href="/announcements" class>Duyurular</a></li><li><a href="/privacy" class>Gizlilik</a></li> </ul> </div> </div> </div> </div> </header> <main class="flex-1">  <div class="container mx-auto px-4 py-8"> <h1 class="text-4xl font-bold mb-6 text-center">Blog</h1> <div class="prose prose-lg max-w-none dark:prose-invert"> <p class="text-center">
+Yakında burada arabuluculuk süreçleri, ücret hesaplama yöntemleri ve DENKLEM mobil uygulamasındaki yenilikler hakkında bilgilendirici yazılar bulabileceksiniz. Lütfen daha sonra tekrar kontrol edin!
+</p> <!-- Sample Blog Post Cards (This will be updated when dynamic content is added.) --> <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"> <div class="card bg-base-200 shadow-xl"> <div class="card-body"> <h2 class="card-title">Arabuluculukta Anlaşmanın Önemi</h2> <p>Arabuluculuk sürecinde anlaşmaya varmanın taraflar için faydaları nelerdir? Detaylı bir bakış.</p> <div class="card-actions justify-end"> <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a> </div> </div> </div> <div class="card bg-base-200 shadow-xl"> <div class="card-body"> <h2 class="card-title">DENKLEM Uygulaması Nasıl Kullanılır?</h2> <p>Adım adım DENKLEM mobil uygulaması ile arabuluculuk ücreti hesaplama rehberi.</p> <div class="card-actions justify-end"> <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a> </div> </div> </div> <div class="card bg-base-200 shadow-xl"> <div class="card-body"> <h2 class="card-title">Güncel Arabuluculuk Mevzuatı</h2> <p>Arabuluculuk ile ilgili son yasal değişiklikler ve bunların hesaplamalara etkisi.</p> <div class="card-actions justify-end"> <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a> </div> </div> </div> </div> </div> </div>  </main> <footer class="bg-base-100 mt-auto "> <div class="container py-8"> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <!-- Logo and Description --> <div> <h3 class="text-lg font-bold text-primary mb-4 gradient-text">DENKLEM</h3> <p class="text-base-content/70">
+Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+</p> </div> <!-- Quick Links --> <div> <!-- Accordion for other pages -->
+          <details class="collapse collapse-arrow bg-base-100 border border-base-200 rounded-box"> <summary class="collapse-title text-base-content text-lg font-medium"> Hızlı Linkler </summary> <div class="collapse-content mt-2">  <ul class="space-y-2"> <li><a href="/about" class="link link-hover">Uygulama Hakkında</a></li> <li><a href="/blog" class="link link-hover">Blog</a></li> <li><a href="/announcements" class="link link-hover">Duyurular</a></li> <li><a href="/privacy" class="link link-hover">Gizlilik Politikası</a></li> </ul>  </div> </details> </div> <!-- Contacts and Links --> <div> <!-- Accordion for other pages -->
+          <details class="collapse collapse-arrow bg-base-100 border border-base-200 rounded-box"> <summary class="collapse-title text-base-content text-lg font-medium"> İletişim </summary> <div class="collapse-content mt-2">  <ul class="space-y-2"> <li> <button class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition" data-email="info@ozco.studio">
+info@ozco.studio
+</button> </li> <li> <a href="https://github.com/ozcotech/DENKLEM" target="_blank" rel="noopener noreferrer" class="link link-hover text-primary flex items-center gap-1"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path> </svg>
+GitHub
+</a> </li> </ul>  </div> </details> </div> </div> <div class="divider"></div> <!-- Footer bottom: copyright and hosting info --> <div class="flex flex-col md:flex-row items-center justify-between text-base-content/70 space-y-1 md:space-y-0"> <div class="text-center md:text-left"> <p>&copy; 2025 DENKLEM. Tüm hakları saklıdır.</p> <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p> </div> <div class="security-info flex items-center space-x-4 text-xs"> <span id="secure-connection" class="flex items-center space-x-1"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 security-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-7h-1V7a5.002 5.002 0 00-10 0v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-3a3 3 0 016 0v3H10V7z"></path> </svg> <span>Secure Connection (SSL)</span> </span> <span class="hosting-info">
+Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" class="underline">GitHub Pages</a> </span> </div> <script>
+        const secureEl = document.getElementById('secure-connection');
+        const iconEl = secureEl.querySelector('.security-icon');
+        if (window.location.protocol === 'https:') {
+          iconEl.classList.add('text-green-500');
+        } else {
+          iconEl.classList.add('text-red-500');
+        }
+      </script> </div> </div> <!-- Toast notification --> <div id="copy-toast" class="toast fixed bottom-4 right-4 opacity-0 transition-opacity duration-300 pointer-events-none"> <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">Kopyalandı!</div> </div> <script>
+    // Email copy functionality
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-email]');
+      if (!btn) return;
+      navigator.clipboard.writeText(btn.dataset.email).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      });
+    });
+
+    // Click outside to close accordions in footer
+    document.addEventListener('click', function(event) {
+      // Select all ‘details’ elements (accordions) in the footer
+      const accordions = document.querySelectorAll('footer details.collapse');
+      
+      accordions.forEach(accordion => {
+        // If the accordion is open and the click is outside the accordion
+        if (accordion.hasAttribute('open') && !accordion.contains(event.target)) {
+          // Close the accordion
+          accordion.removeAttribute('open');
+        }
+      });
+    });
+  </script> </footer> <!-- Scroll to top button - automatically appears on all pages --> <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 btn btn-circle bg-gradient-to-r from-pink-500 to-blue-600 border-0 text-white opacity-0 invisible transition-all duration-300 shadow-lg"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <!-- Scroll to top script --> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
+          } else {
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
+          }
+        });
+        
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script> </body> </html>

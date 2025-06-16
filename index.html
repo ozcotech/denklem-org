@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="tr"> <head><meta charset="UTF-8"><meta name="description" content="DENKLEM mobil uygulaması ile arabuluculuk ücretlerini kolayca hesaplayın. Süre takibi ve serbest meslek makbuzu hesaplaması da dahil."><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.9.1"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://denklem.org/"><meta property="og:title" content="DENKLEM - Arabuluculuk Ücreti Hesaplama Uygulaması"><meta property="og:description" content="DENKLEM mobil uygulaması ile arabuluculuk ücretlerini kolayca hesaplayın. Süre takibi ve serbest meslek makbuzu hesaplaması da dahil."><meta property="og:image" content="https://denklem.org/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://denklem.org/"><meta property="twitter:title" content="DENKLEM - Arabuluculuk Ücreti Hesaplama Uygulaması"><meta property="twitter:description" content="DENKLEM mobil uygulaması ile arabuluculuk ücretlerini kolayca hesaplayın. Süre takibi ve serbest meslek makbuzu hesaplaması da dahil."><meta property="twitter:image" content="https://denklem.org/og-image.jpg"><title>DENKLEM - Arabuluculuk Ücreti Hesaplama Uygulaması</title><!-- Theme initialization script - runs before page loads --><script>
+      // Initialize theme immediately to prevent flash
+      function getTheme() {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+      
+      const theme = getTheme();
+      document.documentElement.setAttribute('data-theme', theme);
+    </script><link rel="stylesheet" href="/_astro/index.C03l_lJY.css"></head> <body class="min-h-screen flex flex-col bg-base-100 text-base-content"> <header class="bg-base-100 shadow-sm border-b border-base-200"> <div class="container"> <div class="navbar px-0"> <!-- Logo --> <div class="navbar-start"> <a href="/" class="btn btn-ghost p-0"> <img src="/_astro/icon.CVqdht1B.png" alt="Denklem" class="w-10 h-10 rounded-lg"> </a> </div> <!-- Desktop navigation removed --> <!-- Theme Toggle + Mobile menu --> <div class="navbar-end"> <!-- Download button --> <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" id="download-button" aria-label="Download"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"></path> <polyline points="8 12 12 16 16 12"></polyline> <line x1="12" y1="16" x2="12" y2="4"></line> </svg> </a> <!-- Theme Toggle Button --> <button id="theme-toggle" class="btn btn-ghost btn-circle" data-astro-cid-x3pjskd3> <svg id="theme-icon-light" class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18.75a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM5.166 17.834a.75.75 0 001.06 1.06l1.591-1.59a.75.75 0 00-1.06-1.061l-1.591 1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.166 5.106a.75.75 0 00-1.06 1.06l1.59 1.591a.75.75 0 101.061-1.06l-1.59-1.591z" data-astro-cid-x3pjskd3></path> </svg> <svg id="theme-icon-dark" class="w-6 h-6 fill-current hidden" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21c3.73 0 6.955-2.034 8.572-5.005z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (!themeToggle) return;
+    
+    // Set theme function
+    function setTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('theme', themeName); 
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark'; 
+      setTheme(newTheme);
+    });
+  });
+</script> <!-- Hamburger menu on all screen sizes --> <div class="dropdown dropdown-end ml-2"> <div tabindex="0" role="button" class="btn btn-ghost" id="hamburger-menu-button"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </div> <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"> <!-- Mobile Navigation -->
+  <li><a href="/" class="active">Ana Sayfa</a></li><li><a href="/about" class>Uygulama Hakkında</a></li><li><a href="/blog" class>Blog</a></li><li><a href="/announcements" class>Duyurular</a></li><li><a href="/privacy" class>Gizlilik</a></li> </ul> </div> </div> </div> </div> </header> <main class="flex-1">   <section class="hero-section text-primary-content"> <div class="container py-4 md:py-6"> <div class="text-center"> <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text block">
+DENKLEM
+</h1> <p class="text-sm sm:text-base md:text-lg mb-4 md:mb-6 gradient-text block px-4">
+Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+</p> </div> </div> </section>  <section class="features-section py-4 md:py-0"> <div class="container h-full"> <div class="h-full flex flex-col justify-center"> <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 px-4 md:px-0"> <!-- Feature 1: Ücret Hesaplama --> <div class="code-editor-card"> <div class="code-editor-header"> <div class="code-editor-dots"> <div class="code-editor-dot red"></div> <div class="code-editor-dot yellow"></div> <div class="code-editor-dot green"></div> </div> <span class="code-editor-filename">UcretHesaplama.css</span> </div> <div class="code-editor-content"> <div class="code-line"> <span class="line-number">1</span> <span class="code-text"><span class="keyword">.arabuluculuk-ucreti</span> <span class="bracket"></span></span> </div> <div class="code-line"> <span class="line-number">2</span> <span class="code-text"> <span class="property">calculation</span>: <span class="string">"automatic"</span>;</span> </div> <div class="code-line"> <span class="line-number">3</span> <span class="code-text"> <span class="property">anlaşma-durumu</span>: <span class="value">true</span> | <span class="value">false</span>;</span> </div> <div class="code-line"> <span class="line-number">4</span> <span class="code-text"> <span class="property">precision</span>: <span class="number">100%</span>;</span> </div> <div class="code-line"> <span class="line-number">5</span> <span class="code-text"><span class="bracket"></span></span> </div> </div> <div class="code-description"> <h3>Ücret Hesaplama</h3> <p>Anlaşma ve anlaşmama durumlarına göre arabuluculuk ücretlerini otomatik hesaplama</p> </div> </div> <!-- Feature 2: Süre Takibi --> <div class="code-editor-card"> <div class="code-editor-header"> <div class="code-editor-dots"> <div class="code-editor-dot red"></div> <div class="code-editor-dot yellow"></div> <div class="code-editor-dot green"></div> </div> <span class="code-editor-filename">SureTakibi.js</span> </div> <div class="code-editor-content"> <div class="code-line"> <span class="line-number">1</span> <span class="code-text"><span class="keyword">const</span> <span class="property">sureTakibi</span> = <span class="bracket"></span></span> </div> <div class="code-line"> <span class="line-number">2</span> <span class="code-text"> <span class="property">tracking</span>: <span class="string">"realtime"</span>,</span> </div> <div class="code-line"> <span class="line-number">3</span> <span class="code-text"> <span class="property">calculations</span>: <span class="string">"automatic"</span>,</span> </div> <div class="code-line"> <span class="line-number">4</span> <span class="code-text"> <span class="property">precision</span>: <span class="string">"milisecond"</span></span> </div> <div class="code-line"> <span class="line-number">5</span> <span class="code-text"><span class="bracket"></span>;</span> </div> </div> <div class="code-description"> <h3>Süre Takibi</h3> <p>Arabuluculuk sürecinin belirli ve sınırlı süreli takibi ve süre hesaplamaları</p> </div> </div> <!-- Feature 3: Makbuz Hesaplama --> <div class="code-editor-card"> <div class="code-editor-header"> <div class="code-editor-dots"> <div class="code-editor-dot red"></div> <div class="code-editor-dot yellow"></div> <div class="code-editor-dot green"></div> </div> <span class="code-editor-filename">MakbuzHesaplama.py</span> </div> <div class="code-editor-content"> <div class="code-line"> <span class="line-number">1</span> <span class="code-text"><span class="keyword">class</span> <span class="property">MakbuzHesaplama</span>:</span> </div> <div class="code-line"> <span class="line-number">2</span> <span class="code-text"> <span class="keyword">def</span> <span class="property">calculate</span>(<span class="value">self</span>):</span> </div> <div class="code-line"> <span class="line-number">3</span> <span class="code-text"> <span class="property">invoice_type</span> = <span class="string">"SMM"</span></span> </div> <div class="code-line"> <span class="line-number">4</span> <span class="code-text"> <span class="keyword">return</span> <span class="property">self</span>.<span class="property">generate</span>()</span> </div> <div class="code-line"> <span class="line-number">5</span> <span class="code-text"> <span class="comment"># Auto-generated invoice</span></span> </div> </div> <div class="code-description"> <h3>Makbuz Hesaplama</h3> <p>Serbest meslek makbuzu hesaplaması ve fatura oluşturma bilgileri</p> </div> </div> </div> </div> </div> </section>  <script>
+    document.body.classList.add('homepage-layout');
+  </script>  </main> <footer class="bg-base-100 mt-auto homepage-footer"> <div class="container py-8"> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <!-- Logo and Description --> <div> <h3 class="text-lg font-bold text-primary mb-4 gradient-text">DENKLEM</h3> <p class="text-base-content/70">
+Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+</p> </div> <!-- Quick Links --> <div> <!-- Compact link list for the homepage -->
+          <div> <h4 class="text-lg font-semibold mb-3">Hızlı Linkler</h4> <div class="grid grid-cols-2 gap-x-4 gap-y-2"> <a href="/about" class="link link-hover text-sm">Uygulama Hakkında</a> <a href="/announcements" class="link link-hover text-sm">Duyurular</a> <a href="/blog" class="link link-hover text-sm">Blog</a> <a href="/privacy" class="link link-hover text-sm">Gizlilik Politikası</a> </div> </div> </div> <!-- Contacts and Links --> <div> <!-- Compact communication for the homepage -->
+          <div> <h4 class="text-lg font-semibold mb-3">İletişim</h4> <ul class="space-y-2"> <li> <button class="text-sm text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition" data-email="info@ozco.studio">
+info@ozco.studio
+</button> </li> <li> <a href="https://github.com/ozcotech/DENKLEM" target="_blank" rel="noopener noreferrer" class="link link-hover text-primary flex items-center gap-1 text-sm"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path> </svg>
+GitHub
+</a> </li> </ul> </div> </div> </div> <div class="divider"></div> <!-- Footer bottom: copyright and hosting info --> <div class="flex flex-col md:flex-row items-center justify-between text-base-content/70 space-y-1 md:space-y-0"> <div class="text-center md:text-left"> <p>&copy; 2025 DENKLEM. Tüm hakları saklıdır.</p> <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p> </div> <div class="security-info flex items-center space-x-4 text-xs"> <span id="secure-connection" class="flex items-center space-x-1"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 security-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-7h-1V7a5.002 5.002 0 00-10 0v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-3a3 3 0 016 0v3H10V7z"></path> </svg> <span>Secure Connection (SSL)</span> </span> <span class="hosting-info">
+Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" class="underline">GitHub Pages</a> </span> </div> <script>
+        const secureEl = document.getElementById('secure-connection');
+        const iconEl = secureEl.querySelector('.security-icon');
+        if (window.location.protocol === 'https:') {
+          iconEl.classList.add('text-green-500');
+        } else {
+          iconEl.classList.add('text-red-500');
+        }
+      </script> </div> </div> <!-- Toast notification --> <div id="copy-toast" class="toast fixed bottom-4 right-4 opacity-0 transition-opacity duration-300 pointer-events-none"> <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">Kopyalandı!</div> </div> <script>
+    // Email copy functionality
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-email]');
+      if (!btn) return;
+      navigator.clipboard.writeText(btn.dataset.email).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      });
+    });
+
+    // Click outside to close accordions in footer
+    document.addEventListener('click', function(event) {
+      // Select all ‘details’ elements (accordions) in the footer
+      const accordions = document.querySelectorAll('footer details.collapse');
+      
+      accordions.forEach(accordion => {
+        // If the accordion is open and the click is outside the accordion
+        if (accordion.hasAttribute('open') && !accordion.contains(event.target)) {
+          // Close the accordion
+          accordion.removeAttribute('open');
+        }
+      });
+    });
+  </script> </footer> <!-- Scroll to top button - automatically appears on all pages --> <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 btn btn-circle bg-gradient-to-r from-pink-500 to-blue-600 border-0 text-white opacity-0 invisible transition-all duration-300 shadow-lg"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <!-- Scroll to top script --> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
+          } else {
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
+          }
+        });
+        
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script> </body> </html>

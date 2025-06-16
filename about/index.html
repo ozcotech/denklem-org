@@ -1,0 +1,130 @@
+<!DOCTYPE html><html lang="tr"> <head><meta charset="UTF-8"><meta name="description" content="Uygulamanın kullanım rehberi ve ekran tanımları"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.9.1"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://denklem.org/about/"><meta property="og:title" content="Kullanım Rehberi"><meta property="og:description" content="Uygulamanın kullanım rehberi ve ekran tanımları"><meta property="og:image" content="https://denklem.org/og-image.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://denklem.org/about/"><meta property="twitter:title" content="Kullanım Rehberi"><meta property="twitter:description" content="Uygulamanın kullanım rehberi ve ekran tanımları"><meta property="twitter:image" content="https://denklem.org/og-image.jpg"><title>Kullanım Rehberi</title><!-- Theme initialization script - runs before page loads --><script>
+      // Initialize theme immediately to prevent flash
+      function getTheme() {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      }
+      
+      const theme = getTheme();
+      document.documentElement.setAttribute('data-theme', theme);
+    </script><link rel="stylesheet" href="/_astro/index.C03l_lJY.css"></head> <body class="min-h-screen flex flex-col bg-base-100 text-base-content"> <header class="bg-base-100 shadow-sm border-b border-base-200"> <div class="container"> <div class="navbar px-0"> <!-- Logo --> <div class="navbar-start"> <a href="/" class="btn btn-ghost p-0"> <img src="/_astro/icon.CVqdht1B.png" alt="Denklem" class="w-10 h-10 rounded-lg"> </a> </div> <!-- Desktop navigation removed --> <!-- Theme Toggle + Mobile menu --> <div class="navbar-end"> <!-- Download button --> <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" id="download-button" aria-label="Download"> <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"></path> <polyline points="8 12 12 16 16 12"></polyline> <line x1="12" y1="16" x2="12" y2="4"></line> </svg> </a> <!-- Theme Toggle Button --> <button id="theme-toggle" class="btn btn-ghost btn-circle" data-astro-cid-x3pjskd3> <svg id="theme-icon-light" class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5h2.25a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18.75a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-1.5a.75.75 0 01.75-.75zM5.166 17.834a.75.75 0 001.06 1.06l1.591-1.59a.75.75 0 00-1.06-1.061l-1.591 1.59zM3 12a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h2.25A.75.75 0 013 12zM6.166 5.106a.75.75 0 00-1.06 1.06l1.59 1.591a.75.75 0 101.061-1.06l-1.59-1.591z" data-astro-cid-x3pjskd3></path> </svg> <svg id="theme-icon-dark" class="w-6 h-6 fill-current hidden" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" data-astro-cid-x3pjskd3> <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21c3.73 0 6.955-2.034 8.572-5.005z" data-astro-cid-x3pjskd3></path> </svg> </button>  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    if (!themeToggle) return;
+    
+    // Set theme function
+    function setTheme(themeName) {
+      document.documentElement.setAttribute('data-theme', themeName);
+      localStorage.setItem('theme', themeName); 
+    }
+    
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark'; 
+      setTheme(newTheme);
+    });
+  });
+</script> <!-- Hamburger menu on all screen sizes --> <div class="dropdown dropdown-end ml-2"> <div tabindex="0" role="button" class="btn btn-ghost" id="hamburger-menu-button"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path> </svg> </div> <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"> <!-- Mobile Navigation -->
+  <li><a href="/" class>Ana Sayfa</a></li><li><a href="/about" class>Uygulama Hakkında</a></li><li><a href="/blog" class>Blog</a></li><li><a href="/announcements" class>Duyurular</a></li><li><a href="/privacy" class>Gizlilik</a></li> </ul> </div> </div> </div> </div> </header> <main class="flex-1">  <div class="container mx-auto px-4 py-8"> <h1 class="text-4xl font-bold mb-6 text-center">Kullanım Rehberi</h1> <!-- Typewriter description text --> <div class="typewriter-container "> <p class="typewriter-text text-lg text-base-content max-w-2xl mx-auto"> <span id="typewriter-iimaqzgxa"></span> <span id="cursor-puny52ooe" class="typewriter-cursor"></span> </p> </div> <script>(function(){const text = "Ekran görüntülerine tıklayarak detaylı açıklamaları görüntüleyebilirsiniz";
+const typingSpeed = 50;
+const startDelay = 500;
+const cursorHideDelay = 1000;
+const uniqueId = "typewriter-iimaqzgxa";
+const cursorId = "cursor-puny52ooe";
+
+  // JavaScript for Typewriter Effect
+  const typewriterElement = document.getElementById(uniqueId);
+  const cursor = document.getElementById(cursorId);
+  let i = 0;
+
+  function typeWriter() {
+    if (typewriterElement && i < text.length) {
+      typewriterElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, typingSpeed);
+    } else if (typewriterElement) {
+      setTimeout(() => {
+        if (cursor) {
+          cursor.style.display = 'none';
+        }
+      }, cursorHideDelay);
+    }
+  }
+
+  // Start the typewriter effect when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(typeWriter, startDelay);
+  });
+})();</script> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center"> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/home-screen.BiZ04qQS.png" alt="Giriş Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Giriş Ekranı</h2> <p class="text-justify text-sm">Giriş ekranı, uygulamanın açılışında kullanıcıyı karşılayan ilk ekrandır. Kullanıcı, bu ekranda oturum açarak uygulamanın temel fonksiyonlarına erişim sağlar. Başarılı bir girişin ardından, alt navigasyon bardaki &#39;Ana Sayfa&#39; sekmesine geçildiğinde kullanıcı doğrudan uyuşmazlık kategorisi ekranına yönlendirilir ve tekrar giriş ekranına dönmez. Ancak kullanıcı, navigasyon bardaki &#39;Mevzuat&#39; veya &#39;Hakkında&#39; sekmelerini ziyaret edip ardından tekrar &#39;Ana Sayfa&#39;ya tıkladığında giriş ekranı yeniden görüntülenebilir.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/dispute-category-screen.D2IL0sug.png" alt="Uyuşmazlık Kategorisi Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Uyuşmazlık Kategorisi Ekranı</h2> <p class="text-justify text-sm">Bu ekranda, arabuluculuk konusu para olan uyuşmazlıkları kolayca seçebilir ve hesaplamalarınızı çoğunlukla bu yol üzerinden gerçekleştirebilirsiniz. Para içeren uyuşmazlıklar, kullanıcılar tarafından en çok tercih edilen seçenek olup, hesaplamalarınızda hızlı ve doğru sonuçlar almanızı sağlar. Bu bölümde yer alan Süre Hesaplama ve SMM Hesaplama butonları sayesinde farklı hesaplama modlarına hızlıca erişebilirsiniz.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/agreement-status-screen.IBloB9ji.png" alt="Anlaşma Durumu Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Anlaşma Durumu Ekranı</h2> <p class="text-justify text-sm">Bu ekranda, arabuluculuk sürecinin &#39;anlaşma&#39; veya &#39;anlaşmama&#39; ile sonuçlandığını hızlıca belirleyebilmeniz için pratik bir seçim menüsü sunulmaktadır. Buton içerisindeki listeyi kaydırarak sürecin sonucunu seçebilirsiniz. Bu seçim, sonraki hesaplama ve işlemler için temel kriter olarak kullanılır.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/dispute-type-screen.C-3Nly4d.png" alt="Uyuşmazlık Türü Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Uyuşmazlık Türü Ekranı</h2> <p class="text-justify text-sm">Bu ekranda, toplamda yedi farklı uyuşmazlık türü için hesaplama başlatabilirsiniz. Özellikle “Kira Hukuku”, “Komşuluk Hakkı Hukuku” ve “Kat Mülkiyeti Kanunundan Kaynaklanan Uyuşmazlıklar”, hesaplama kriterleri aynı olduğu için tek bir buton üzerinden seçilebilmektedir. İlgili butonlardan birini seçerek, arabuluculuk sürecine uygun hesaplama kriterinizi kolayca oluşturabilirsiniz.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/input-screen.B210tkF4.png" alt="Uyuşmazlık Bilgileri Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Uyuşmazlık Bilgileri Ekranı</h2> <p class="text-justify text-sm">Bu ekranda, seçtiğiniz uyuşmazlık türü görüntülenir ve hesaplama işlemleri için gerekli bilgiler girilebilir. Anlaşma sağlandıysa, &#39;Anlaşılan Miktar&#39; ve &#39;Taraf Sayısı&#39; alanlarını doldurarak arabuluculuk ücretini hızlıca hesaplayabilirsiniz. Anlaşma sağlanamadıysa, yalnızca &#39;Taraf Sayısı&#39; bilgisini girerek de hesaplama yapmanız mümkündür. Böylece her iki durumda da hızlı ve doğru sonuçlara ulaşabilirsiniz.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/result-screen.Ct_Tz06O.png" alt="Sonuç Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Sonuç Ekranı</h2> <p class="text-justify text-sm">Bu ekranda, gerçekleştirdiğiniz hesaplamanın sonucu ayrıntılı olarak görüntülenir. Dava şartı uyuşmazlıklarda ve anlaşma sağlanamadığı durumlarda, arabuluculuk ücretiyle birlikte ilgili Serbest Meslek Makbuzu (SMM) da otomatik olarak düzenlenir ve gösterilir. Eğer süreç anlaşmayla sonuçlandıysa, seçilen uyuşmazlık türüne göre yalnızca arabuluculuk ücreti sonucu sunulur.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/time-screen.dhOK-lO5.png" alt="Süre Hesaplama" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">Süre Hesaplama</h2> <p class="text-justify text-sm">Süre Hesaplama ekranında, sistem varsayılan olarak bugünün tarihini seçili şekilde getirir. Dilerseniz tarih seçimi alanına tıklayarak, takvim üzerinden önceki veya sonraki bir tarihi seçebilirsiniz. Seçilen tarihe göre, ilgili uyuşmazlık türlerine ait tüm süreler otomatik olarak hesaplanır ve toplu şekilde ekranda görüntülenir.</p> </div> </div> </div> <div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')"> <div class="flip-card-inner"> <div class="flip-card-front"> <img src="/_astro/smm-screen.B8n--kSQ.png" alt="SMM Hesaplama Ekranı" class="object-contain w-full h-full"> </div> <div class="flip-card-back p-6 bg-base-100 text-base-content overflow-y-auto flex flex-col justify-center"> <h2 class="text-xl font-bold mb-4 text-center">SMM Hesaplama Ekranı</h2> <p class="text-justify text-sm">SMM Hesaplama ekranında, hesaplanacak arabuluculuk ücreti ilgili alana girildikten sonra, istenilen hesaplama türü (vergi türü) seçilebilir. Sonuçlar, hem gerçek kişiler hem de tüzel kişiler için ayrı ayrı tablo halinde sunulur. Böylece, meslek makbuzu düzenlemesi için gerekli tüm bilgiler pratik ve anlaşılır şekilde kullanıcıya aktarılır.</p> </div> </div> </div> </div> </div>  </main> <footer class="bg-base-100 mt-auto "> <div class="container py-8"> <div class="grid grid-cols-1 md:grid-cols-3 gap-8"> <!-- Logo and Description --> <div> <h3 class="text-lg font-bold text-primary mb-4 gradient-text">DENKLEM</h3> <p class="text-base-content/70">
+Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+</p> </div> <!-- Quick Links --> <div> <!-- Accordion for other pages -->
+          <details class="collapse collapse-arrow bg-base-100 border border-base-200 rounded-box"> <summary class="collapse-title text-base-content text-lg font-medium"> Hızlı Linkler </summary> <div class="collapse-content mt-2">  <ul class="space-y-2"> <li><a href="/about" class="link link-hover">Uygulama Hakkında</a></li> <li><a href="/blog" class="link link-hover">Blog</a></li> <li><a href="/announcements" class="link link-hover">Duyurular</a></li> <li><a href="/privacy" class="link link-hover">Gizlilik Politikası</a></li> </ul>  </div> </details> </div> <!-- Contacts and Links --> <div> <!-- Accordion for other pages -->
+          <details class="collapse collapse-arrow bg-base-100 border border-base-200 rounded-box"> <summary class="collapse-title text-base-content text-lg font-medium"> İletişim </summary> <div class="collapse-content mt-2">  <ul class="space-y-2"> <li> <button class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition" data-email="info@ozco.studio">
+info@ozco.studio
+</button> </li> <li> <a href="https://github.com/ozcotech/DENKLEM" target="_blank" rel="noopener noreferrer" class="link link-hover text-primary flex items-center gap-1"> <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"> <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path> </svg>
+GitHub
+</a> </li> </ul>  </div> </details> </div> </div> <div class="divider"></div> <!-- Footer bottom: copyright and hosting info --> <div class="flex flex-col md:flex-row items-center justify-between text-base-content/70 space-y-1 md:space-y-0"> <div class="text-center md:text-left"> <p>&copy; 2025 DENKLEM. Tüm hakları saklıdır.</p> <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p> </div> <div class="security-info flex items-center space-x-4 text-xs"> <span id="secure-connection" class="flex items-center space-x-1"> <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 security-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"> <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-7h-1V7a5.002 5.002 0 00-10 0v3H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-3a3 3 0 016 0v3H10V7z"></path> </svg> <span>Secure Connection (SSL)</span> </span> <span class="hosting-info">
+Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer" class="underline">GitHub Pages</a> </span> </div> <script>
+        const secureEl = document.getElementById('secure-connection');
+        const iconEl = secureEl.querySelector('.security-icon');
+        if (window.location.protocol === 'https:') {
+          iconEl.classList.add('text-green-500');
+        } else {
+          iconEl.classList.add('text-red-500');
+        }
+      </script> </div> </div> <!-- Toast notification --> <div id="copy-toast" class="toast fixed bottom-4 right-4 opacity-0 transition-opacity duration-300 pointer-events-none"> <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">Kopyalandı!</div> </div> <script>
+    // Email copy functionality
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-email]');
+      if (!btn) return;
+      navigator.clipboard.writeText(btn.dataset.email).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      });
+    });
+
+    // Click outside to close accordions in footer
+    document.addEventListener('click', function(event) {
+      // Select all ‘details’ elements (accordions) in the footer
+      const accordions = document.querySelectorAll('footer details.collapse');
+      
+      accordions.forEach(accordion => {
+        // If the accordion is open and the click is outside the accordion
+        if (accordion.hasAttribute('open') && !accordion.contains(event.target)) {
+          // Close the accordion
+          accordion.removeAttribute('open');
+        }
+      });
+    });
+  </script> </footer> <!-- Scroll to top button - automatically appears on all pages --> <button id="scroll-to-top" class="fixed bottom-6 right-6 z-50 btn btn-circle bg-gradient-to-r from-pink-500 to-blue-600 border-0 text-white opacity-0 invisible transition-all duration-300 shadow-lg"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path> </svg> </button> <!-- Scroll to top script --> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.classList.remove('opacity-0', 'invisible');
+            scrollToTopBtn.classList.add('opacity-100', 'visible');
+          } else {
+            scrollToTopBtn.classList.add('opacity-0', 'invisible');
+            scrollToTopBtn.classList.remove('opacity-100', 'visible');
+          }
+        });
+        
+        // Scroll to top when clicked
+        scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      });
+    </script> </body> </html>
