@@ -156,54 +156,6 @@
     color: transparent;
   }
 
-  /* button border color in light mode */
-  html[data-theme='light'] .download-btn {
-    border-color: #242525; /* Blue */
-    color: #93C5FD; /* Light mode button text color */
-  }
-
-  /* Neumorphic style for Download App button */
-  .download-btn {
-    padding: 0.7em 1.7em; /* Sample padding, optional */
-    font-size: 1rem; /* Sample font size, optional */
-    border-radius: 0.75rem; /* Suitable radius for rectangle */
-    background: #ffffff;
-    border: none; /* Neumorphic style usually defines its own boundaries or does not use them at all. */
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow:
-      -4px -4px 8px rgba(255, 255, 255, 0.8), /* Upper left emphasis */
-       4px  4px 8px rgba(0,   0,   0,   0.1);   /* Lower right shadow */
-    color: #93C5FD; /* Light mode text color */
-    /* Align the icon and text if necessary */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem; /* Icon and text spacing */
-  }
-
-  .download-btn:active {
-    box-shadow:
-      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
-      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
-    color: #666; /* Pressed text color */
-  }
-
-  html[data-theme='dark'] .download-btn {
-    background: var(--b2) !important; /* Dark mode background */
-    color: var(--color-base-content) !important; /* Blue text in dark mode */
-    box-shadow:
-      -4px -4px 8px rgba(255, 255, 255, 0.1), /* Dark mode upper left emphasis */
-       4px  4px 8px rgba(0,   0,   0,   0.6);   /* Dark mode lower right shadow */
-  }
-
-  html[data-theme='dark'] .download-btn:active {
-    box-shadow:
-      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
-      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
-    color: var(--color-base-content) !important;
-  }
-
   /* Gradient left border for email contact boxes - creates colorful left border using linear gradient */
   .gradient-border-left {
     border-left: 4px solid transparent;
