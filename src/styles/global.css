@@ -112,6 +112,44 @@
       inset  2px  2px 4px rgba(0,   0,   0,   0.6);
   }
 
+  /* Download button circle style */
+  #download-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem; /* space between download and theme toggle */
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.8),
+       4px  4px 8px rgba(0,   0,   0,   0.1);
+  }
+
+  #download-button:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
+  }
+
+  html[data-theme='dark'] #download-button {
+    background: var(--b2) !important;
+    color: var(--bc) !important;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.1),
+       4px  4px 8px rgba(0,   0,   0,   0.6);
+  }
+
+  html[data-theme='dark'] #download-button:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
+  }
+
   /* General card styles */
   .card {
     transition: transform 0.3s ease;
