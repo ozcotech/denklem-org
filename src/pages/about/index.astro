@@ -9,6 +9,7 @@ import resultScreen from '../../assets/result-screen.png?url';
 import timeScreen from '../../assets/time-screen.png?url';
 import smmScreen from '../../assets/smm-screen.png?url';
 import FlipCard from '../../components/FlipCard.astro';
+import Typewriter from '../../components/Typewriter.astro';
 
 const pageTitle = "Kullanım Rehberi";
 const pageDescription = "Uygulamanın kullanım rehberi ve ekran tanımları";
@@ -16,6 +17,15 @@ const pageDescription = "Uygulamanın kullanım rehberi ve ekran tanımları";
 <BaseLayout title={pageTitle} description={pageDescription}>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6 text-center">Kullanım Rehberi</h1>
+    
+    <!-- Typewriter description text -->
+    <Typewriter 
+      text="Ekran görüntülerine tıklayarak detaylı açıklamaları görüntüleyebilirsiniz"
+      typingSpeed={50}
+      startDelay={500}
+      cursorHideDelay={1000}
+    />
+    
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
       <FlipCard
         front={homeScreen}

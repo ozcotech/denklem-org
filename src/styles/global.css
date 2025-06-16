@@ -313,6 +313,28 @@
   .flip-card-back {
     transform: rotateY(180deg);
   }
+
+  /* Typewriter effect styles */
+  .typewriter-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .typewriter-text {
+    font-weight: 500;
+    font-size: 1.125rem;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+  
+  .typewriter-cursor {
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
 }
 
 @layer utilities {

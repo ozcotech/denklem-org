@@ -1,0 +1,53 @@
+---
+export interface Props {
+  text: string;
+  typingSpeed?: number;
+  startDelay?: number;
+  cursorHideDelay?: number;
+  className?: string;
+}
+/* Configuring Typewriter Component in Astro */
+const { 
+  text, 
+  typingSpeed = 50, 
+  startDelay = 500, 
+  cursorHideDelay = 1000,
+  className = "" 
+} = Astro.props;
+
+const uniqueId = `typewriter-${Math.random().toString(36).substr(2, 9)}`;
+const cursorId = `cursor-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`typewriter-container ${className}`}>
+  <p class="typewriter-text text-lg text-base-content max-w-2xl mx-auto">
+    <span id={uniqueId}></span>
+    <span id={cursorId} class="typewriter-cursor"></span>
+  </p>
+</div>
+
+<script define:vars={{ text, typingSpeed, startDelay, cursorHideDelay, uniqueId, cursorId }}>
+  // JavaScript for Typewriter Effect
+  const typewriterElement = document.getElementById(uniqueId);
+  const cursor = document.getElementById(cursorId);
+  let i = 0;
+
+  function typeWriter() {
+    if (typewriterElement && i < text.length) {
+      typewriterElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, typingSpeed);
+    } else if (typewriterElement) {
+      setTimeout(() => {
+        if (cursor) {
+          cursor.style.display = 'none';
+        }
+      }, cursorHideDelay);
+    }
+  }
+
+  // Start the typewriter effect when the page loads
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(typeWriter, startDelay);
+  });
+</script>
