@@ -335,6 +335,124 @@
     0%, 50% { opacity: 1; }
     51%, 100% { opacity: 0; }
   }
+
+  /* Home page footer compact style */
+  .homepage-footer {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .homepage-footer .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .homepage-footer h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .homepage-footer ul {
+    gap: 0.25rem;
+  }
+  
+  .homepage-footer .divider {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Home page fixed height layout */
+  .homepage-layout {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  /* Fixed height for desktop */
+  @media (min-width: 768px) and (min-height: 600px) {
+    .homepage-layout {
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    .homepage-layout main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    
+    .homepage-layout .hero-section {
+      flex: 0 0 auto;
+    }
+    
+    .homepage-layout .features-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      min-height: 0;
+    }
+    
+    .homepage-layout .homepage-footer {
+      flex: 0 0 auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+  
+  /* Normal scroll behavior for mobile */
+  @media (max-width: 767px) {
+    .homepage-layout {
+      height: auto;
+      overflow: visible;
+    }
+    
+    .homepage-layout main {
+      flex: 1;
+    }
+    
+    .homepage-layout .features-section {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    
+    .homepage-layout .hero-section .container {
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+    }
+    
+    .homepage-layout .homepage-footer {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+  }
+  
+  /* For small height displays */
+  @media (max-height: 700px) and (min-width: 768px) {
+    .homepage-layout .features-section .grid {
+      gap: 0.75rem;
+    }
+    
+    .homepage-layout .features-section .card-body {
+      padding: 1rem;
+    }
+    
+    .homepage-layout .features-section h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .homepage-layout .features-section p {
+      font-size: 0.875rem;
+    }
+    
+    .homepage-layout .hero-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .homepage-layout .hero-section p {
+      font-size: 1rem;
+    }
+  }
 }
 
 @layer utilities {
