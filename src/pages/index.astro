@@ -36,38 +36,118 @@ const bodyClass = "homepage-layout";
   <section class="features-section py-4 md:py-0">
     <div class="container h-full">
       <div class="h-full flex flex-col justify-center">
-        <div class="text-center mb-4 md:mb-6">
-          <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-2">Programın Özellikleri</h2>
-        </div>
-        
         <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 px-4 md:px-0">
-          <!-- Feature 1 -->
-          <div class="card neumorphic-feature-card no-underline">
-            <div class="card-body flex flex-col items-center justify-start pt-3 md:pt-4 pb-3 md:pb-4">
-              <div class="bg-base-200 p-3 md:p-4 rounded-lg text-center w-full">
-                <h3 class="text-base md:text-lg font-semibold mb-1 md:mb-2">Ücret Hesaplama</h3>
-                <p class="text-xs md:text-sm text-base-content/70">Anlaşma ve anlaşmama durumlarına göre arabuluculuk ücretlerini otomatik hesaplama</p>
+          <!-- Feature 1: Ücret Hesaplama -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
               </div>
+              <span class="code-editor-filename">UcretHesaplama.css</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">.arabuluculuk-ucreti</span> <span class="bracket">{</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">  <span class="property">calculation</span>: <span class="string">"otomatik"</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">  <span class="property">anlaşma-durumu</span>: <span class="value">true</span> | <span class="value">false</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">  <span class="property">precision</span>: <span class="number">100%</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text"><span class="bracket">}</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Ücret Hesaplama</h3>
+              <p>Anlaşma ve anlaşmama durumlarına göre arabuluculuk ücretlerini otomatik hesaplama</p>
             </div>
           </div>
 
-          <!-- Feature 2 -->
-          <div class="card neumorphic-feature-card no-underline">
-            <div class="card-body flex flex-col items-center justify-start pt-3 md:pt-4 pb-3 md:pb-4">
-              <div class="bg-base-200 p-3 md:p-4 rounded-lg text-center w-full">
-                <h3 class="text-base md:text-lg font-semibold mb-1 md:mb-2">Süre Takibi</h3>
-                <p class="text-xs md:text-sm text-base-content/70">Arabuluculuk sürecinin belirli süreli takibi ve süre hesaplamaları</p>
+          <!-- Feature 2: Süre Takibi -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
               </div>
+              <span class="code-editor-filename">SureTakibi.js</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">const</span> <span class="property">sureTakibi</span> = <span class="bracket">{</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">  <span class="property">tracking</span>: <span class="string">"realtime"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">  <span class="property">calculations</span>: <span class="string">"automatic"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">  <span class="property">precision</span>: <span class="string">"milisecond"</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text"><span class="bracket">};</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Süre Takibi</h3>
+              <p>Arabuluculuk sürecinin belirli ve sınırlı süreli takibi ve süre hesaplamaları</p>
             </div>
           </div>
 
-          <!-- Feature 3 -->
-          <div class="card neumorphic-feature-card no-underline">
-            <div class="card-body flex flex-col items-center justify-start pt-3 md:pt-4 pb-3 md:pb-4">
-              <div class="bg-base-200 p-3 md:p-4 rounded-lg text-center w-full">
-                <h3 class="text-base md:text-lg font-semibold mb-1 md:mb-2">Makbuz Hesaplama</h3>
-                <p class="text-xs md:text-sm text-base-content/70">Serbest meslek makbuzu hesaplaması ve fatura oluşturma bilgileri</p>
+          <!-- Feature 3: Makbuz Hesaplama -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
               </div>
+              <span class="code-editor-filename">MakbuzHesaplama.py</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">class</span> <span class="property">MakbuzHesaplama</span>:</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">    <span class="keyword">def</span> <span class="property">calculate</span>(<span class="value">self</span>):</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">        <span class="property">invoice_type</span> = <span class="string">"SMM"</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">        <span class="keyword">return</span> <span class="property">self</span>.<span class="property">generate</span>()</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text">    <span class="comment"># Auto-generated invoice</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Makbuz Hesaplama</h3>
+              <p>Serbest meslek makbuzu hesaplaması ve fatura oluşturma bilgileri</p>
             </div>
           </div>
         </div>

@@ -338,12 +338,12 @@
 
   /* Home page footer compact style */
   .homepage-footer {
-    padding-top: 1.5rem;
+    padding-top: 0.5rem;
     padding-bottom: 1.5rem;
   }
   
   .homepage-footer .container {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 1rem;
   }
   
@@ -357,8 +357,8 @@
   }
   
   .homepage-footer .divider {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
   }
 
   /* Home page fixed height layout */
@@ -394,8 +394,8 @@
     
     .homepage-layout .homepage-footer {
       flex: 0 0 auto;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+      padding-top: 0;
+      padding-bottom: 0.25rem;
     }
   }
   
@@ -421,7 +421,7 @@
     }
     
     .homepage-layout .homepage-footer {
-      padding-top: 1.5rem;
+      padding-top: 1rem;
       padding-bottom: 1.5rem;
     }
   }
@@ -452,6 +452,203 @@
     .homepage-layout .hero-section p {
       font-size: 1rem;
     }
+  }
+
+  /* Kod editörü temalı kartlar */
+  .code-editor-card {
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Monaco, 'Cascadia Code', 'Roboto Mono', Courier, monospace;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Light mode kod editörü kartları */
+  html[data-theme='light'] .code-editor-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  
+  html[data-theme='light'] .code-editor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Dark mode kod editörü kartları */
+  html[data-theme='dark'] .code-editor-card {
+    background: #1e1e2e;
+    border: 1px solid #383a42;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  html[data-theme='dark'] .code-editor-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 12px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Header - Light Mode */
+  html[data-theme='light'] .code-editor-header {
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  /* Header - Dark Mode */
+  html[data-theme='dark'] .code-editor-header {
+    background: #2d2d2d;
+    padding: 8px 12px;
+    border-bottom: 1px solid #383a42;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .code-editor-dots {
+    display: flex;
+    gap: 4px;
+  }
+  
+  .code-editor-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .code-editor-dot.red { background: #ff5f56; }
+  .code-editor-dot.yellow { background: #ffbd2e; }
+  .code-editor-dot.green { background: #27ca3f; }
+  
+  /* Filename - Light Mode */
+  html[data-theme='light'] .code-editor-filename {
+    color: #6b7280;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  
+  /* Filename - Dark Mode */
+  html[data-theme='dark'] .code-editor-filename {
+    color: #a6accd;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  
+  /* Content - Light Mode */
+  html[data-theme='light'] .code-editor-content {
+    padding: 16px;
+    background: #ffffff;
+    color: #374151;
+    line-height: 1.6;
+  }
+  
+  /* Content - Dark Mode */
+  html[data-theme='dark'] .code-editor-content {
+    padding: 16px;
+    background: #1e1e2e;
+    color: #a6accd;
+    line-height: 1.6;
+  }
+  
+  .code-line {
+    display: flex;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  
+  /* Line numbers - Light Mode */
+  html[data-theme='light'] .line-number {
+    color: #9ca3af;
+    margin-right: 16px;
+    width: 20px;
+    text-align: right;
+    user-select: none;
+  }
+  
+  /* Line numbers - Dark Mode */
+  html[data-theme='dark'] .line-number {
+    color: #6c7086;
+    margin-right: 16px;
+    width: 20px;
+    text-align: right;
+    user-select: none;
+  }
+  
+  .code-text {
+    flex: 1;
+  }
+  
+  /* Syntax highlighting colors - Light Mode */
+  html[data-theme='light'] .keyword { color: #7c3aed; }
+  html[data-theme='light'] .property { color: #2563eb; }
+  html[data-theme='light'] .value { color: #059669; }
+  html[data-theme='light'] .string { color: #d97706; }
+  html[data-theme='light'] .comment { color: #6b7280; font-style: italic; }
+  html[data-theme='light'] .number { color: #dc2626; }
+  html[data-theme='light'] .bracket { color: #be185d; }
+  
+  /* Syntax highlighting colors - Dark Mode */
+  html[data-theme='dark'] .keyword { color: #cba6f7; }
+  html[data-theme='dark'] .property { color: #89b4fa; }
+  html[data-theme='dark'] .value { color: #a6e3a1; }
+  html[data-theme='dark'] .string { color: #f9e2af; }
+  html[data-theme='dark'] .comment { color: #6c7086; font-style: italic; }
+  html[data-theme='dark'] .number { color: #fab387; }
+  html[data-theme='dark'] .bracket { color: #f38ba8; }
+  
+  /* Description area - Light Mode */
+  html[data-theme='light'] .code-description {
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    color: #374151;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  html[data-theme='light'] .code-description h3 {
+    color: #be185d;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  html[data-theme='light'] .code-description p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #6b7280;
+  }
+  
+  /* Description area - Dark Mode */
+  html[data-theme='dark'] .code-description {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid #383a42;
+    color: #cdd6f4;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  html[data-theme='dark'] .code-description h3 {
+    color: #f38ba8;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-family: ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  html[data-theme='dark'] .code-description p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #bac2de;
   }
 }
 
