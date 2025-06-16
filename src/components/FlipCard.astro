@@ -7,7 +7,7 @@ export interface Props {
 }
 const { front, alt = '', title, description } = Astro.props;
 ---
-<div class="flip-card w-[400px] h-[869px] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
+<div class="flip-card w-full max-w-[400px] aspect-[400/869] cursor-pointer" onclick="this.querySelector('.flip-card-inner').classList.toggle('flipped')">
   <div class="flip-card-inner">
     <div class="flip-card-front">
       <img src={front} alt={alt} class="object-contain w-full h-full" />
