@@ -5,12 +5,39 @@ export interface Props {
 
 const { mobile = false } = Astro.props;
 
+// Language detection
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+
+// Translations object
+const texts = {
+  tr: {
+    home: 'Ana Sayfa',
+    about: 'Uygulama Hakkında',
+    blog: 'Blog',
+    announcements: 'Duyurular',
+    privacy: 'Gizlilik'
+  },
+  en: {
+    home: 'Home',
+    about: 'About App',
+    blog: 'Blog',
+    announcements: 'Announcements',
+    privacy: 'Privacy'
+  }
+};
+
+const t = texts[isEnglish ? 'en' : 'tr'];
+
+// Base URL for links
+const baseUrl = isEnglish ? '/en' : '';
+
 const navItems = [
-  { name: 'Ana Sayfa', href: '/' },
-  { name: 'Uygulama Hakkında', href: '/about' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Duyurular', href: '/announcements' },
-  { name: 'Gizlilik', href: '/privacy' },
+  { name: t.home, href: baseUrl + '/' },
+  { name: t.about, href: baseUrl + '/about' },
+  { name: t.blog, href: baseUrl + '/blog' },
+  { name: t.announcements, href: baseUrl + '/announcements' },
+  { name: t.privacy, href: baseUrl + '/privacy' },
 ];
 
 const currentPath = Astro.url.pathname;
