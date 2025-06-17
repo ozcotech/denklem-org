@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const pageTitle = "Privacy Policy";
+const pageDescription = "Privacy policy for DENKLEM mobile application and website. Learn about how we collect, use and protect your data.";
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
+    <div class="card bg-base-100 privacy-card p-6">
+      <div class="prose prose-lg max-w-none dark:prose-invert">
+        <h2 class="text-2xl font-bold mb-4">DENKLEM – Privacy Policy</h2>
+        <p><strong>Last updated:</strong> June 2025</p>
+        <p>
+          We respect the privacy of users of the DENKLEM application ("Application") and denklem.org website ("Website") and commit to the following principles:
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">1. No Personal Data Collection</h3>
+        <p>
+          The application and website do not collect, store or share any personal data with third parties. No personal information such as name, email, IP address, device information is processed by us.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">2. Calculations Performed on Device</h3>
+        <p>
+          All mediation fee calculations work completely on your device and locally. The entered data or calculation results are not transmitted to any server, recorded or shared externally.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">3. No Internet Connection Required</h3>
+        <p>
+          The application works offline and does not require an internet connection. No data transfer takes place within the application.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">4. Data Security</h3>
+        <p>
+          Since no data is collected, no personal information belonging to the user is stored by us. There is no access to calculations made on the device or external transfer.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">5. Third Party Services</h3>
+        <p>
+          The application does not use any third party services, analytics tools or advertising services.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-6 mb-3">6. Contact</h3>
+        <p>
+          You can contact us for any questions about privacy:
+        </p>
+        <div class="mt-2">
+          <!-- Email contact box with gradient left border and copy functionality -->
+          <div class="bg-base-200 border-l-4 border-primary px-4 py-3 rounded-r-lg">
+            <!-- Clickable email button with text selection enabled -->
+            <button
+              type="button"
+              class="text-base-content hover:text-primary transition font-mono"
+              style="-webkit-user-select: text; user-select: text; background: none; border: none; padding: 0;"
+              onclick="navigator.clipboard.writeText('info@ozco.studio')"
+            >
+              info@ozco.studio
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Toast notification -->
+    <div
+      id="copy-toast"
+      class="toast fixed bottom-4 left-4 opacity-0 transition-opacity duration-300 pointer-events-none"
+    >
+      <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">Copied!</div>
+    </div>
+
+    <script is:inline>
+      document.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[onclick*="clipboard.writeText"]');
+        if (!btn) return;
+        const toast = document.getElementById('copy-toast');
+        toast.classList.remove('opacity-0');
+        setTimeout(() => toast.classList.add('opacity-0'), 2000);
+      });
+    </script>
+  </div>
+</BaseLayout>
