@@ -3,7 +3,39 @@ import Accordion from './Accordion.astro';
 const currentYear = new Date().getFullYear();
 
 const { pathname } = Astro.url;
-const isHomePage = pathname === '/';
+const isEnglish = pathname.startsWith('/en');
+const isHomePage = pathname === '/' || pathname === '/en' || pathname === '/en/';
+
+// Translations object
+const texts = {
+  tr: {
+    description: "Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.",
+    quickLinks: "Hızlı Linkler",
+    contact: "İletişim",
+    about: "Uygulama Hakkında",
+    announcements: "Duyurular",
+    blog: "Blog",
+    privacy: "Gizlilik Politikası",
+    copyright: "Tüm hakları saklıdır.",
+    tagline: "Arabuluculuk Ücreti Hesaplama Programı",
+    copied: "Kopyalandı!"
+  },
+  en: {
+    description: "Mobile application developed for mediation fee calculation, time tracking and freelance invoice calculation.",
+    quickLinks: "Quick Links",
+    contact: "Contact",
+    about: "About Application",
+    announcements: "Announcements",
+    blog: "Blog",
+    privacy: "Privacy Policy",
+    copyright: "All rights reserved.",
+    tagline: "Mediation Fee Calculation Program",
+    copied: "Copied!"
+  }
+};
+
+const t = texts[isEnglish ? 'en' : 'tr'];
+const baseUrl = isEnglish ? '/en' : '';
 ---
 
 <footer class={`bg-base-100 mt-auto ${isHomePage ? 'homepage-footer' : ''}`}>
@@ -13,7 +45,7 @@ const isHomePage = pathname === '/';
       <div>
         <h3 class="text-lg font-bold text-primary mb-4 gradient-text">DENKLEM</h3>
         <p class="text-base-content/70">
-          Arabuluculuk ücreti hesaplama, süre takibi ve serbest meslek makbuzu hesaplaması için geliştirilmiş mobil uygulama.
+          {t.description}
         </p>
       </div>
 
@@ -22,22 +54,22 @@ const isHomePage = pathname === '/';
         {isHomePage ? (
           <!-- Compact link list for the homepage -->
           <div>
-            <h4 class="text-lg font-semibold mb-3">Hızlı Linkler</h4>
+            <h4 class="text-lg font-semibold mb-3">{t.quickLinks}</h4>
             <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-              <a href="/about" class="link link-hover text-sm">Uygulama Hakkında</a>
-              <a href="/announcements" class="link link-hover text-sm">Duyurular</a>
-              <a href="/blog" class="link link-hover text-sm">Blog</a>
-              <a href="/privacy" class="link link-hover text-sm">Gizlilik Politikası</a>
+              <a href={`${baseUrl}/about`} class="link link-hover text-sm">{t.about}</a>
+              <a href={`${baseUrl}/announcements`} class="link link-hover text-sm">{t.announcements}</a>
+              <a href={`${baseUrl}/blog`} class="link link-hover text-sm">{t.blog}</a>
+              <a href={`${baseUrl}/privacy`} class="link link-hover text-sm">{t.privacy}</a>
             </div>
           </div>
         ) : (
           <!-- Accordion for other pages -->
-          <Accordion title="Hızlı Linkler">
+          <Accordion title={t.quickLinks}>
             <ul class="space-y-2">
-              <li><a href="/about" class="link link-hover">Uygulama Hakkında</a></li>
-              <li><a href="/blog" class="link link-hover">Blog</a></li>
-              <li><a href="/announcements" class="link link-hover">Duyurular</a></li>
-              <li><a href="/privacy" class="link link-hover">Gizlilik Politikası</a></li>
+              <li><a href={`${baseUrl}/about`} class="link link-hover">{t.about}</a></li>
+              <li><a href={`${baseUrl}/blog`} class="link link-hover">{t.blog}</a></li>
+              <li><a href={`${baseUrl}/announcements`} class="link link-hover">{t.announcements}</a></li>
+              <li><a href={`${baseUrl}/privacy`} class="link link-hover">{t.privacy}</a></li>
             </ul>
           </Accordion>
         )}
@@ -46,7 +78,7 @@ const isHomePage = pathname === '/';
         {isHomePage ? (
           <!-- Compact communication for the homepage -->
           <div>
-            <h4 class="text-lg font-semibold mb-3">İletişim</h4>
+            <h4 class="text-lg font-semibold mb-3">{t.contact}</h4>
             <ul class="space-y-2">
               <li>
                 <button
@@ -73,7 +105,7 @@ const isHomePage = pathname === '/';
           </div>
         ) : (
           <!-- Accordion for other pages -->
-          <Accordion title="İletişim">
+          <Accordion title={t.contact}>
             <ul class="space-y-2">
               <li>
                 <button
@@ -107,8 +139,8 @@ const isHomePage = pathname === '/';
     <!-- Footer bottom: copyright and hosting info -->
     <div class="flex flex-col md:flex-row items-center justify-between text-base-content/70 space-y-1 md:space-y-0">
       <div class="text-center md:text-left">
-        <p>&copy; {currentYear} DENKLEM. Tüm hakları saklıdır.</p>
-        <p class="text-sm mt-1">Arabuluculuk Ücreti Hesaplama Programı</p>
+        <p>&copy; {currentYear} DENKLEM. {t.copyright}</p>
+        <p class="text-sm mt-1">{t.tagline}</p>
       </div>
       <div class="security-info flex items-center space-x-4 text-xs">
         <span id="secure-connection" class="flex items-center space-x-1">
@@ -135,7 +167,7 @@ const isHomePage = pathname === '/';
 
   <!-- Toast notification -->
   <div id="copy-toast" class="toast fixed bottom-4 right-4 opacity-0 transition-opacity duration-300 pointer-events-none">
-    <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">Kopyalandı!</div>
+    <div class="bg-base-100 text-base-content px-4 py-2 rounded shadow">{t.copied}</div>
   </div>
 
   <script is:inline>
