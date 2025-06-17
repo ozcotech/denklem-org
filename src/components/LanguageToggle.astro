@@ -1,0 +1,59 @@
+---
+---
+
+<button id="language-toggle" class="btn btn-ghost btn-circle">
+  <span id="language-text">TR</span>
+</button>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const languageToggle = document.getElementById('language-toggle');
+    const languageText = document.getElementById('language-text');
+    
+    if (!languageToggle || !languageText) return;
+    
+    // Detect current language based on URL
+    function getCurrentLanguage() {
+      return window.location.pathname.startsWith('/en') ? 'en' : 'tr';
+    }
+    
+    // Update button text based on current language
+    function updateLanguageButton() {
+      const currentLang = getCurrentLanguage();
+      // Show the opposite language (what user can switch to)
+      languageText.textContent = currentLang === 'en' ? 'TR' : 'EN';
+    }
+    
+    // Switch language function
+    function switchLanguage() {
+      const currentLang = getCurrentLanguage();
+      const newLang = currentLang === 'en' ? 'tr' : 'en';
+      
+      let newPath;
+      if (newLang === 'en') {
+        // Switch to English: add /en prefix
+        if (window.location.pathname === '/') {
+          newPath = '/en/';
+        } else {
+          newPath = '/en' + window.location.pathname;
+        }
+      } else {
+        // Switch to Turkish: remove /en prefix
+        if (window.location.pathname === '/en' || window.location.pathname === '/en/') {
+          newPath = '/';
+        } else {
+          newPath = window.location.pathname.replace(/^\/en/, '');
+        }
+      }
+      
+      // Navigate to new language version
+      window.location.href = newPath;
+    }
+    
+    // Initialize button text
+    updateLanguageButton();
+    
+    // Add click event listener
+    languageToggle.addEventListener('click', switchLanguage);
+  });
+</script>

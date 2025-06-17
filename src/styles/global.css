@@ -27,9 +27,15 @@
   /* Theme toggle button hover effects */
   #theme-toggle {
     transition: all 0.3s ease;
+    margin-right: 0.5rem; /* space between theme and language toggle */
   }
   
   #theme-toggle:hover {
+    transform: scale(1.1);
+  }
+
+  /* Add hover effect to language toggle as well */
+  #language-toggle:hover {
     transform: scale(1.1);
   }
 
@@ -145,6 +151,46 @@
   }
 
   html[data-theme='dark'] #download-button:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.6);
+  }
+
+  /* Language toggle button circle style */
+  #language-toggle {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem; /* space between language and hamburger */
+    font-size: 0.75rem;
+    font-weight: 600;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.8),
+       4px  4px 8px rgba(0,   0,   0,   0.1);
+  }
+
+  #language-toggle:active {
+    box-shadow:
+      inset -2px -2px 4px rgba(255, 255, 255, 0.8),
+      inset  2px  2px 4px rgba(0,   0,   0,   0.1);
+  }
+
+  html[data-theme='dark'] #language-toggle {
+    background: var(--b2) !important;
+    color: var(--bc) !important;
+    box-shadow:
+      -4px -4px 8px rgba(255, 255, 255, 0.1),
+       4px  4px 8px rgba(0,   0,   0,   0.6);
+  }
+
+  html[data-theme='dark'] #language-toggle:active {
     box-shadow:
       inset -2px -2px 4px rgba(255, 255, 255, 0.1),
       inset  2px  2px 4px rgba(0,   0,   0,   0.6);

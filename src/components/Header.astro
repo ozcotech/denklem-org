@@ -1,6 +1,7 @@
 ---
 import Navigation from './Navigation.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import LanguageToggle from './LanguageToggle.astro';
 import iconUrl from '../assets/icon.png?url';
 ---
 
@@ -16,7 +17,7 @@ import iconUrl from '../assets/icon.png?url';
       
       <!-- Desktop navigation removed -->
 
-      <!-- Theme Toggle + Mobile menu -->
+      <!-- Theme Toggle + Language Toggle + Mobile menu -->
       <div class="navbar-end">
         <!-- Download button -->
         <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" id="download-button" aria-label="Download">
@@ -28,6 +29,9 @@ import iconUrl from '../assets/icon.png?url';
         </a>
         <!-- Theme Toggle Button -->
         <ThemeToggle />
+        
+        <!-- Language Toggle Button -->
+        <LanguageToggle />
         
         <!-- Hamburger menu on all screen sizes -->
         <div class="dropdown dropdown-end ml-2">
