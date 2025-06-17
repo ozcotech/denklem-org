@@ -690,6 +690,17 @@
     line-height: 1.4;
     color: #bac2de;
   }
+
+  .navbar-end {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  /* Prevent download button from shrinking */
+  #download-button {
+    flex-shrink: 0;
+  }
 }
 
 @layer utilities {
