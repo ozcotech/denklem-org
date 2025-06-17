@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Special body class for the home page
+const bodyClass = "homepage-layout";
+---
+
+<BaseLayout 
+  title="DENKLEM - Mediation Fee Calculation Application"
+  description="Calculate mediation fees easily with DENKLEM mobile app. Including time tracking and freelance invoice calculations."
+>
+  <!-- Hero Section -->
+  <section class="hero-section text-primary-content">
+    <div class="container py-4 md:py-6">
+      <div class="text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text block">
+          DENKLEM
+        </h1>
+        <p class="text-sm sm:text-base md:text-lg mb-4 md:mb-6 gradient-text block px-4">
+          Mobile application developed for mediation fee calculation, time tracking and freelance invoice calculation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section py-4 md:py-0">
+    <div class="container h-full">
+      <div class="h-full flex flex-col justify-center">
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 px-4 md:px-0">
+          <!-- Feature 1: Fee Calculation -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
+              </div>
+              <span class="code-editor-filename">FeeCalculation.css</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">.mediation-fee</span> <span class="bracket">{</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">  <span class="property">calculation</span>: <span class="string">"automatic"</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">  <span class="property">agreement-status</span>: <span class="value">true</span> | <span class="value">false</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">  <span class="property">precision</span>: <span class="number">100%</span>;</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text"><span class="bracket">}</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Fee Calculation</h3>
+              <p>Automatic calculation of mediation fees according to agreement and disagreement situations</p>
+            </div>
+          </div>
+
+          <!-- Feature 2: Time Tracking -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
+              </div>
+              <span class="code-editor-filename">TimeTracking.js</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">const</span> <span class="property">timeTracking</span> = <span class="bracket">{</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">  <span class="property">tracking</span>: <span class="string">"realtime"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">  <span class="property">calculations</span>: <span class="string">"automatic"</span>,</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">  <span class="property">precision</span>: <span class="string">"millisecond"</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text"><span class="bracket">};</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Time Tracking</h3>
+              <p>Specific and time-limited tracking of the mediation process and time calculations</p>
+            </div>
+          </div>
+
+          <!-- Feature 3: Invoice Calculation -->
+          <div class="code-editor-card">
+            <div class="code-editor-header">
+              <div class="code-editor-dots">
+                <div class="code-editor-dot red"></div>
+                <div class="code-editor-dot yellow"></div>
+                <div class="code-editor-dot green"></div>
+              </div>
+              <span class="code-editor-filename">InvoiceCalculation.py</span>
+            </div>
+            <div class="code-editor-content">
+              <div class="code-line">
+                <span class="line-number">1</span>
+                <span class="code-text"><span class="keyword">class</span> <span class="property">InvoiceCalculation</span>:</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">2</span>
+                <span class="code-text">    <span class="keyword">def</span> <span class="property">calculate</span>(<span class="value">self</span>):</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">3</span>
+                <span class="code-text">        <span class="property">invoice_type</span> = <span class="string">"Freelance"</span></span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">4</span>
+                <span class="code-text">        <span class="keyword">return</span> <span class="property">self</span>.<span class="property">generate</span>()</span>
+              </div>
+              <div class="code-line">
+                <span class="line-number">5</span>
+                <span class="code-text">    <span class="comment"># Auto-generated invoice</span></span>
+              </div>
+            </div>
+            <div class="code-description">
+              <h3>Invoice Calculation</h3>
+              <p>Freelance invoice calculation and billing information generation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special script to add body class for the home page -->
+  <script is:inline>
+    document.body.classList.add('homepage-layout');
+  </script>
+</BaseLayout>
