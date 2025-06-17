@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import homeScreen from '../../../assets/home-screen.png?url';
+import disputeCategoryScreen from '../../../assets/dispute-category-screen.png?url';
+import agreementStatusScreen from '../../../assets/agreement-status-screen.png?url';
+import disputeTypeScreen from '../../../assets/dispute-type-screen.png?url';
+import inputScreen from '../../../assets/input-screen.png?url';
+import resultScreen from '../../../assets/result-screen.png?url';
+import timeScreen from '../../../assets/time-screen.png?url';
+import smmScreen from '../../../assets/smm-screen.png?url';
+import FlipCard from '../../../components/FlipCard.astro';
+import Typewriter from '../../../components/Typewriter.astro';
+
+const pageTitle = "User Guide";
+const pageDescription = "Application user guide and screen descriptions";
+---
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-6 text-center">User Guide</h1>
+    
+    <!-- Typewriter description text -->
+    <Typewriter 
+      text="Click on the screenshots to view detailed descriptions"
+      typingSpeed={50}
+      startDelay={500}
+      cursorHideDelay={1000}
+    />
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
+      <FlipCard
+        front={homeScreen}
+        alt="Home Screen"
+        title="Home Screen"
+        description={`The home screen is the first screen that greets the user when the application opens. The user logs in on this screen and gains access to the basic functions of the application. After a successful login, when the user switches to the 'Home' tab in the bottom navigation bar, they are directly redirected to the dispute category screen and do not return to the login screen. However, if the user visits the 'Legislation' or 'About' tabs in the navigation bar and then clicks 'Home' again, the login screen may be displayed again.`}
+      />
+      <FlipCard
+        front={disputeCategoryScreen}
+        alt="Dispute Category Screen"
+        title="Dispute Category Screen"
+        description={`On this screen, you can easily select disputes involving monetary mediation and perform most of your calculations through this path. Monetary disputes are the most preferred option by users, allowing you to get fast and accurate results in your calculations. Thanks to the Time Calculation and SMM Calculation buttons in this section, you can quickly access different calculation modes.`}
+      />
+      <FlipCard
+        front={agreementStatusScreen}
+        alt="Agreement Status Screen"
+        title="Agreement Status Screen"
+        description={`This screen provides a practical selection menu for you to quickly determine whether the mediation process resulted in 'agreement' or 'disagreement'. You can select the outcome of the process by scrolling through the list within the button. This selection is used as a basic criterion for subsequent calculations and operations.`}
+      />
+      <FlipCard
+        front={disputeTypeScreen}
+        alt="Dispute Type Screen"
+        title="Dispute Type Screen"
+        description={`On this screen, you can start calculations for a total of seven different dispute types. Particularly "Rental Law", "Neighborhood Rights Law" and "Disputes Arising from the Condominium Law" can be selected through a single button since their calculation criteria are the same. By selecting one of the relevant buttons, you can easily create the appropriate calculation criteria for the mediation process.`}
+      />
+      <FlipCard
+        front={inputScreen}
+        alt="Dispute Information Screen"
+        title="Dispute Information Screen"
+        description={`On this screen, the dispute type you selected is displayed and the necessary information for calculation operations can be entered. If an agreement is reached, you can quickly calculate the mediation fee by filling in the 'Agreed Amount' and 'Number of Parties' fields. If no agreement is reached, you can also make calculations by entering only the 'Number of Parties' information. This way, you can achieve fast and accurate results in both cases.`}
+      />
+      <FlipCard
+        front={resultScreen}
+        alt="Result Screen"
+        title="Result Screen"
+        description={`On this screen, the result of your calculation is displayed in detail. In cases where litigation is a prerequisite and when no agreement is reached, the relevant Freelance Invoice (SMM) is automatically prepared and displayed along with the mediation fee. If the process concludes with an agreement, only the mediation fee result is presented according to the selected dispute type.`}
+      />
+      <FlipCard
+        front={timeScreen}
+        alt="Time Calculation"
+        title="Time Calculation"
+        description={`In the Time Calculation screen, the system brings today's date as selected by default. If you wish, you can click on the date selection field and select a previous or future date from the calendar. According to the selected date, all periods related to the relevant dispute types are automatically calculated and displayed collectively on the screen.`}
+      />
+      <FlipCard
+        front={smmScreen}
+        alt="SMM Calculation Screen"
+        title="SMM Calculation Screen"
+        description={`In the SMM Calculation screen, after entering the mediation fee to be calculated in the relevant field, the desired calculation type (tax type) can be selected. The results are presented in separate tables for both real persons and legal entities. Thus, all information necessary for issuing professional invoices is conveyed to the user in a practical and understandable manner.`}
+      />
+    </div>
+  </div>
+</BaseLayout>
