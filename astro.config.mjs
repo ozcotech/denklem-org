@@ -12,6 +12,14 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 export default defineConfig({
   site: 'https://denklem.org',
 
+  i18n: {
+    defaultLocale: 'tr',
+    locales: ['tr', 'en'],
+    routing: {
+      prefixDefaultLocale: false
+    }
+  },
+
   integrations: [
     tailwind({
       applyBaseStyles: false, // Disable base styles to avoid conflicts with DaisyUI
@@ -23,5 +31,4 @@ export default defineConfig({
     }),
     sitemap()
   ],
-
 });
