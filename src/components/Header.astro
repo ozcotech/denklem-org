@@ -2,20 +2,16 @@
 import Navigation from './Navigation.astro';
 import ThemeToggle from './ThemeToggle.astro';
 import LanguageToggle from './LanguageToggle.astro';
-import iconUrl from '../assets/icon.png?url';
 ---
 
 <header class="bg-base-100 shadow-sm border-b border-base-200">
   <div class="container">
     <div class="navbar px-0">
-      <!-- Logo -->
       <div class="navbar-start">
-        <a href="/" class="btn btn-ghost p-0">
-          <img src={iconUrl} alt="Denklem" class="w-10 h-10 rounded-lg" />
+        <a href="/" class="app-logo-sm">
+          <span class="app-logo-letter-sm">D</span>
         </a>
       </div>
-      
-      <!-- Desktop navigation removed -->
 
       <!-- Theme Toggle + Language Toggle + Mobile menu -->
       <div class="navbar-end space-x-0.5">
