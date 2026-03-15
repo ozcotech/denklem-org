@@ -18,7 +18,8 @@ const texts = {
     privacy: "Gizlilik Politikası",
     copyright: "Tüm hakları saklıdır.",
     tagline: "Arabuluculuk Ücreti Hesaplama Programı",
-    copied: "Kopyalandı!"
+    copied: "Kopyalandı!",
+    email: "E-posta"
   },
   en: {
     description: "Mobile application developed for mediation fee calculation, time tracking and freelance invoice calculation.",
@@ -30,7 +31,8 @@ const texts = {
     privacy: "Privacy Policy",
     copyright: "All rights reserved.",
     tagline: "Mediation Fee Calculation Program",
-    copied: "Copied!"
+    copied: "Copied!",
+    email: "Email"
   }
 };
 
@@ -82,10 +84,14 @@ const baseUrl = isEnglish ? '/en' : '';
             <ul class="space-y-2">
               <li>
                 <button
-                  class="text-sm text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition"
+                  class="text-sm text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition flex items-center gap-1"
                   data-email="info@denklem.org"
+                  title="info@denklem.org"
                 >
-                  info@denklem.org
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  {t.email}
                 </button>
               </li>
               <li>
@@ -109,10 +115,14 @@ const baseUrl = isEnglish ? '/en' : '';
             <ul class="space-y-2">
               <li>
                 <button
-                  class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition"
+                  class="text-base-content/70 bg-base-100/20 hover:bg-base-100/40 px-2 py-1 rounded transition flex items-center gap-1"
                   data-email="info@denklem.org"
+                  title="info@denklem.org"
                 >
-                  info@denklem.org
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                  {t.email}
                 </button>
               </li>
               <li>
