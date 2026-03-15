@@ -1,45 +1,39 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
 const pageTitle = "Blog";
-const pageDescription = "Arabuluculuk, yasal ücret hesaplamaları ve DENKLEM uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler.";
+const pageDescription = "Arabuluculuk, yasal ücret hesaplamaları ve Denklem uygulamasıyla ilgili en son makaleler, ipuçları ve güncellemeler.";
+
+const allPosts = await getCollection('blog', ({ data }: CollectionEntry<'blog'>) => data.lang === 'tr');
+const sorted = allPosts.sort((a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.date.valueOf() - a.data.date.valueOf());
+
+interface PostItem { title: string; description: string; date: string; href: string; }
+const posts: PostItem[] = sorted.map((entry: CollectionEntry<'blog'>) => ({
+  title: entry.data.title,
+  description: entry.data.description,
+  date: entry.data.date.toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }),
+  href: `/blog/${entry.id.replace('tr/', '').replace(/\.mdx?$/, '')}`,
+}));
 ---
 <BaseLayout title={pageTitle} description={pageDescription}>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
-    <div class="prose prose-lg max-w-none dark:prose-invert">
-      <p class="text-center">
-        Yakında burada arabuluculuk süreçleri, ücret hesaplama yöntemleri ve DENKLEM mobil uygulamasındaki yenilikler hakkında bilgilendirici yazılar bulabileceksiniz. Lütfen daha sonra tekrar kontrol edin!
-      </p>
-      <!-- Sample Blog Post Cards (This will be updated when dynamic content is added.) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {posts.map((post) => (
         <div class="card bg-base-200 shadow-xl">
           <div class="card-body">
-            <h2 class="card-title">Arabuluculukta Anlaşmanın Önemi</h2>
-            <p>Arabuluculuk sürecinde anlaşmaya varmanın taraflar için faydaları nelerdir? Detaylı bir bakış.</p>
-            <div class="card-actions justify-end">
-              <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a>
+            <h2 class="card-title">{post.title}</h2>
+            <p class="text-sm text-base-content/70">{post.date}</p>
+            <p class="text-sm mt-1">{post.description}</p>
+            <div class="card-actions justify-end mt-2">
+              <a href={post.href} class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl btn-scale">
+                Devamını Oku
+              </a>
             </div>
           </div>
         </div>
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">DENKLEM Uygulaması Nasıl Kullanılır?</h2>
-            <p>Adım adım DENKLEM mobil uygulaması ile arabuluculuk ücreti hesaplama rehberi.</p>
-            <div class="card-actions justify-end">
-              <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a>
-            </div>
-          </div>
-        </div>
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <h2 class="card-title">Güncel Arabuluculuk Mevzuatı</h2>
-            <p>Arabuluculuk ile ilgili son yasal değişiklikler ve bunların hesaplamalara etkisi.</p>
-            <div class="card-actions justify-end">
-              <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Devamını Oku</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </BaseLayout>

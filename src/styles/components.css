@@ -1,0 +1,405 @@
+/* ─── Components ──────────────────────────────────────────────────────────── */
+
+/* ── Layout ──────────────────────────────────────────────────────────────── */
+
+.navbar-end {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+
+
+/* ── Neumorphic Circle Buttons ───────────────────────────────────────────── */
+/* Shared base for all four header icon buttons                               */
+
+#theme-toggle,
+#language-toggle,
+#download-button,
+#hamburger-menu-button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-circle);
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-neumorph);
+}
+
+#theme-toggle:active,
+#language-toggle:active,
+#download-button:active,
+#hamburger-menu-button:active {
+  box-shadow: var(--shadow-neumorph-active);
+}
+
+#theme-toggle:hover,
+#language-toggle:hover {
+  transform: scale(1.1);
+}
+
+html[data-theme='dark'] #theme-toggle,
+html[data-theme='dark'] #language-toggle,
+html[data-theme='dark'] #download-button,
+html[data-theme='dark'] #hamburger-menu-button {
+  background: var(--b2) !important;
+  color: var(--bc) !important;
+  box-shadow: var(--shadow-neumorph-dark);
+}
+
+html[data-theme='dark'] #theme-toggle:active,
+html[data-theme='dark'] #language-toggle:active,
+html[data-theme='dark'] #download-button:active,
+html[data-theme='dark'] #hamburger-menu-button:active {
+  box-shadow: var(--shadow-neumorph-dark-active);
+}
+
+/* Individual overrides */
+#theme-toggle    { margin-right: 0.5rem; }
+#download-button { margin-right: 0.5rem; flex-shrink: 0; }
+#language-toggle { margin-right: 0.5rem; font-size: 0.75rem; font-weight: 600; }
+
+
+/* ── App Logo (Header D icon) ────────────────────────────────────────────── */
+
+.app-logo-sm {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-logo);
+  background: linear-gradient(135deg, var(--brand-pink), var(--brand-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(92, 105, 246, 0.3);
+  text-decoration: none;
+}
+
+html[data-theme='dark'] .app-logo-sm {
+  box-shadow: 0 4px 12px rgba(244, 78, 233, 0.2);
+}
+
+.app-logo-letter-sm {
+  font-size: 40px;
+  font-weight: 600;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.55));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: "SF Pro Rounded", "SF Pro Display", ui-rounded, "Nunito", "Varela Round", system-ui, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+
+/* ── Gradient Utilities ──────────────────────────────────────────────────── */
+
+.gradient-text {
+  background: linear-gradient(to right, var(--brand-pink), var(--brand-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Colorful left border via gradient — used on contact email boxes */
+.gradient-border-left {
+  border-left: 4px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(to bottom, var(--brand-pink), var(--brand-purple));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+
+/* ── General Cards ───────────────────────────────────────────────────────── */
+
+.card {
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.feature-card {
+  aspect-ratio: 3/4;
+}
+
+/* Blog/announcement list cards */
+html[data-theme='light'] .card.bg-base-200 {
+  background: #ffffff !important;
+  box-shadow: var(--shadow-card-light) !important;
+}
+html[data-theme='dark'] .card.bg-base-200 {
+  background: var(--color-base-100) !important;
+  box-shadow: var(--shadow-card-dark) !important;
+}
+
+/* About page cards */
+html[data-theme='light'] .card.bg-base-100 {
+  background: #ffffff !important;
+  box-shadow: var(--shadow-card-light) !important;
+}
+html[data-theme='dark'] .card.bg-base-100 {
+  background: var(--color-base-100) !important;
+  box-shadow: var(--shadow-card-dark) !important;
+}
+
+/* Privacy page card — no hover animation */
+html[data-theme='light'] .privacy-card {
+  box-shadow: var(--shadow-card-light) !important;
+}
+html[data-theme='dark'] .privacy-card {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.4) !important;
+}
+.privacy-card:hover {
+  transform: none !important;
+}
+
+
+/* ── Neumorphic Feature Cards ────────────────────────────────────────────── */
+
+.neumorphic-feature-card {
+  background-color: #ffffff;
+  box-shadow:
+    -8px -8px 16px rgba(255, 255, 255, 0.85),
+     8px  8px 16px rgba(0, 0, 0, 0.12);
+  border: none;
+}
+
+html[data-theme='dark'] .neumorphic-feature-card {
+  background-color: var(--b1);
+  box-shadow:
+    -8px -8px 16px rgba(255, 255, 255, 0.07),
+     8px  8px 16px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='light'] .neumorphic-feature-card .card-body > div {
+  background: #ffffff !important;
+  box-shadow: var(--shadow-card-light);
+}
+
+html[data-theme='dark'] .neumorphic-feature-card .card-body > div {
+  background: var(--color-base-100) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+html[data-theme='dark'] .card .bg-base-200 {
+  background-color: rgba(124, 124, 124, 0.1);
+}
+
+
+/* ── Code Editor Cards (Homepage) ────────────────────────────────────────── */
+
+.code-editor-card {
+  border-radius: var(--radius-logo);
+  overflow: hidden;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Monaco,
+    'Cascadia Code', 'Roboto Mono', Courier, monospace;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+html[data-theme='light'] .code-editor-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+html[data-theme='light'] .code-editor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+html[data-theme='dark'] .code-editor-card {
+  background: #1e1e2e;
+  border: 1px solid #1e1e2e;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+html[data-theme='dark'] .code-editor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme='light'] .code-editor-header {
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+html[data-theme='dark'] .code-editor-header {
+  background: #2d2d2d;
+  border-bottom: 1px solid #383a42;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.code-editor-dots { display: flex; gap: 4px; }
+.code-editor-dot  { width: 12px; height: 12px; border-radius: 50%; }
+.code-editor-dot.red    { background: #ff5f56; }
+.code-editor-dot.yellow { background: #ffbd2e; }
+.code-editor-dot.green  { background: #27ca3f; }
+
+html[data-theme='light'] .code-editor-filename { color: #6b7280; font-size: 12px; margin-left: 8px; }
+html[data-theme='dark']  .code-editor-filename { color: #a6accd; font-size: 12px; margin-left: 8px; }
+
+html[data-theme='light'] .code-editor-content {
+  padding: 16px;
+  background: #ffffff;
+  color: #374151;
+  line-height: 1.6;
+}
+html[data-theme='dark'] .code-editor-content {
+  padding: 16px;
+  background: #1e1e2e;
+  color: #a6accd;
+  line-height: 1.6;
+}
+
+.code-line { display: flex; margin-bottom: 4px; font-size: 13px; }
+.code-text  { flex: 1; }
+
+html[data-theme='light'] .line-number { color: #9ca3af; margin-right: 16px; width: 20px; text-align: right; user-select: none; }
+html[data-theme='dark']  .line-number { color: #6c7086; margin-right: 16px; width: 20px; text-align: right; user-select: none; }
+
+/* Syntax highlighting */
+html[data-theme='light'] .keyword  { color: #7c3aed; }
+html[data-theme='light'] .property { color: #2563eb; }
+html[data-theme='light'] .value    { color: #059669; }
+html[data-theme='light'] .string   { color: #d97706; }
+html[data-theme='light'] .comment  { color: #6b7280; font-style: italic; }
+html[data-theme='light'] .number   { color: #dc2626; }
+html[data-theme='light'] .bracket  { color: #be185d; }
+
+html[data-theme='dark'] .keyword   { color: #cba6f7; }
+html[data-theme='dark'] .property  { color: #89b4fa; }
+html[data-theme='dark'] .value     { color: #a6e3a1; }
+html[data-theme='dark'] .string    { color: #f9e2af; }
+html[data-theme='dark'] .comment   { color: #6c7086; font-style: italic; }
+html[data-theme='dark'] .number    { color: #fab387; }
+html[data-theme='dark'] .bracket   { color: #f38ba8; }
+
+html[data-theme='light'] .code-description {
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  color: #374151;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+html[data-theme='dark'] .code-description {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid #383a42;
+  color: #cdd6f4;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.code-description h3 {
+  color: #93C5FD;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+html[data-theme='light'] .code-description p { font-size: 12px; line-height: 1.4; color: #6b7280; }
+html[data-theme='dark']  .code-description p { font-size: 12px; line-height: 1.4; color: #bac2de; }
+
+
+/* ── Button Effects ──────────────────────────────────────────────────────── */
+
+.btn-scale {
+  transition: transform 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .btn-scale:hover  { transform: scale(1.05); }
+  .btn-scale:active { transform: scale(0.95); }
+}
+
+
+/* ── App Screen Cards (About page) ──────────────────────────────────────── */
+
+.app-screen-card {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.app-screen-card:hover {
+  transform: translateY(-4px);
+}
+
+
+/* ── Warning Box (About page usage guide) ────────────────────────────────── */
+
+.warning-box {
+  background-color: #FEF3C7;
+  color: #92400E;
+  box-shadow: var(--shadow-card-light);
+}
+html[data-theme='dark'] .warning-box {
+  background-color: var(--color-base-100) !important;
+  color: #FDE047;
+  box-shadow: var(--shadow-card-dark);
+}
+
+
+/* ── Homepage Layout ─────────────────────────────────────────────────────── */
+
+.homepage-layout {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.homepage-footer {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+.homepage-footer .container  { padding-top: 0.5rem; padding-bottom: 1rem; }
+.homepage-footer h4          { font-size: 1rem; margin-bottom: 0.75rem; }
+.homepage-footer ul          { gap: 0.25rem; }
+.homepage-footer .divider    { margin-top: 0.75rem; margin-bottom: 0.75rem; }
+
+/* Fixed-height layout on desktop */
+@media (min-width: 768px) and (min-height: 600px) {
+  .homepage-layout {
+    height: 100vh;
+    overflow: hidden;
+  }
+  .homepage-layout main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  .homepage-layout .hero-section     { flex: 0 0 auto; }
+  .homepage-layout .features-section { flex: 1; display: flex; align-items: center; min-height: 0; }
+  .homepage-layout .homepage-footer  { flex: 0 0 auto; padding-top: 0; padding-bottom: 0.25rem; }
+}
+
+/* Normal scroll on mobile */
+@media (max-width: 767px) {
+  .homepage-layout              { height: auto; overflow: visible; }
+  .homepage-layout main         { flex: 1; }
+  .homepage-layout .features-section { padding-top: 2rem; padding-bottom: 2rem; }
+  .homepage-layout .hero-section .container { padding-top: 2rem; padding-bottom: 1rem; }
+  .homepage-layout .homepage-footer { padding-top: 1rem; padding-bottom: 1.5rem; }
+}
+
+/* Compact adjustments for small-height displays */
+@media (max-height: 700px) and (min-width: 768px) {
+  .homepage-layout .features-section .grid       { gap: 0.75rem; }
+  .homepage-layout .features-section .card-body  { padding: 1rem; }
+  .homepage-layout .features-section h3          { font-size: 1.125rem; margin-bottom: 0.5rem; }
+  .homepage-layout .features-section p           { font-size: 0.875rem; }
+  .homepage-layout .hero-section h1              { font-size: 2.5rem; }
+  .homepage-layout .hero-section p               { font-size: 1rem; }
+}

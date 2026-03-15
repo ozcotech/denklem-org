@@ -1,0 +1,23 @@
+/* ─── Design Tokens ───────────────────────────────────────────────────────── */
+/* Single source of truth for brand colors, shadows, and radii.               */
+
+:root {
+  /* Brand colors */
+  --brand-pink:   #f44ee9;
+  --brand-purple: #5c69f6;
+
+  /* Neumorphic button shadows */
+  --shadow-neumorph:              -4px -4px 8px rgba(255, 255, 255, 0.8),  4px  4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-neumorph-active: inset -2px -2px 4px rgba(255, 255, 255, 0.8), inset 2px  2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-neumorph-dark:         -4px -4px 8px rgba(255, 255, 255, 0.1),  4px  4px 8px rgba(0, 0, 0, 0.6);
+  --shadow-neumorph-dark-active:  inset -2px -2px 4px rgba(255, 255, 255, 0.1), inset 2px 2px 4px rgba(0, 0, 0, 0.6);
+
+  /* Card shadows */
+  --shadow-card-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-card-dark:  0 4px 6px rgba(0, 0, 0, 0.4);
+
+  /* Radii */
+  --radius-circle: 50%;
+  --radius-card:   1rem;
+  --radius-logo:   12px;
+}

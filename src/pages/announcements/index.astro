@@ -1,71 +1,40 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
 const pageTitle = "Duyurular";
-const pageDescription = "DENKLEM mobil uygulamasıyla ilgili en son haberler, güncellemeler ve önemli duyurular.";
+const pageDescription = "Denklem mobil uygulamasıyla ilgili en son haberler, güncellemeler ve önemli duyurular.";
+
+const allItems = await getCollection('announcements', ({ data }: CollectionEntry<'announcements'>) => data.lang === 'tr');
+const sorted = allItems.sort((a: CollectionEntry<'announcements'>, b: CollectionEntry<'announcements'>) => b.data.date.valueOf() - a.data.date.valueOf());
+
+interface AnnouncementItem { title: string; date: string; href: string; }
+const announcements: AnnouncementItem[] = sorted.map((entry: CollectionEntry<'announcements'>) => ({
+  title: entry.data.title,
+  date: entry.data.date.toLocaleDateString('tr-TR', { day: '2-digit', month: 'long', year: 'numeric' }),
+  href: `/announcements/${entry.id.replace('tr/', '').replace(/\.mdx?$/, '')}`,
+}));
 ---
 <BaseLayout title={pageTitle} description={pageDescription}>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
-    <div class="prose prose-lg max-w-none dark:prose-invert">
-      <p class="text-center mb-8">
-        DENKLEM uygulamasıyla ilgili en son gelişmeleri ve duyuruları buradan takip edebilirsiniz.
-      </p>
-      
-      <div class="space-y-6">
-                  <div class="card bg-base-200 shadow-md">
-                    <div class="card-body">
-                      <h2 class="card-title text-xl font-semibold">Yeni Sürüm Yayınlandı: v2.5.5</h2>
-                      <p class="text-sm text-base-content/70">07 Mart 2026</p>
-                      <p>Bu sürümle birlikte VoiceOver desteği uygulamamıza eklendi. Uygulamanızı güncellemeyi unutmayın. Amacımız uygulamanın görme engelli kullanıcılar için daha erişilebilir ve bağımsızlık sağlayan bir teknoloji geliştirmek. Bir yazılımın gerçek gücü bazen kaç kişinin kullandığı değil, kimin kullanabildiğidir.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-200 shadow-md">
-                    <div class="card-body">
-                      <h2 class="card-title text-xl font-semibold">Süpriz Gelişmeler Yolda: v2.1.0</h2>
-                      <p class="text-sm text-base-content/70">12 Ocak 2026</p>
-                      <p>Bu sürümle birlikte arabuluculukta vekalet ücreti hesaplama, kira tespiti ve tahliye durumlarında arabuluculuk ücreti hesaplama ve işe iade durumunda arabuluculuk ücreti hesaplama gibi özel hesaplamalar bu gelecek bir sonraki sürümde uygulamamızda olacaktır. İlk hedefimiz 2026 Şubat ayında arabuluculukta vekalet ücreti hesaplama yöntemini uygulamamıza ekleyeceğiz. Tüm geri bildirimleri titizlikle takip ediyoruz. Lütfen geri bildirimlerinize bizden esirgemeyiniz. Güncellemeleri takip ediniz.</p>
-                    </div>
-                  </div>
-          <div class="card bg-base-200 shadow-md">
-            <div class="card-body">
-              <h2 class="card-title text-xl font-semibold">Yeni Sürüm Geliyor: v2.0.0</h2>
-              <p class="text-sm text-base-content/70">12 Ocak 2026</p>
-              <p>Denklem mobil uygulamasının yeni sürümü (v2.0.0) çok yakında geliyor. Bu sürümde 2025 tarifesi yanında 2026 tarifesi de eklendi. Daha güncel verilerle hesaplamalar yapabileceksiniz. 2026 Ocak ayı içerisinde yeni sürüm tüm yeni özellikleriyle yayınlanacaktır. Yeni arayüz, yeni icon, yeni tasarım, liquid glass stilinde, daha hızlı, daha keskin hesaplamalar bu yeni sürümle birlikte yayınlanacaktır. Uygulamanızı güncellemeler konusunda takip ediniz.</p>
-            </div>
-          </div>
+    <p class="text-center mb-8 text-base-content/70">
+      Denklem uygulamasıyla ilgili en son gelişmeleri ve duyuruları buradan takip edebilirsiniz.
+    </p>
+    <div class="space-y-6 max-w-3xl mx-auto">
+      {announcements.map((item) => (
         <div class="card bg-base-200 shadow-md">
           <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">Yeni Sürüm Yayınlandı: v1.0.1</h2>
-            <p class="text-sm text-base-content/70">06 Haziran 2025</p>
-            <p>DENKLEM mobil uygulamasının yeni sürümü (v1.0.1) yayınlandı! Bu sürümde performans iyileştirmeleri ve küçük düzeltmeler bulunmaktadır. Hemen indirin veya güncelleyin.</p>
-            <div class="card-actions justify-end">
-              <a href="/blog/yeni-surum-v1-0-1-detaylari" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Detaylar</a>
+            <h2 class="card-title text-xl font-semibold">{item.title}</h2>
+            <p class="text-sm text-base-content/70">{item.date}</p>
+            <div class="card-actions justify-end mt-2">
+              <a href={item.href} class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl btn-scale">
+                Devamını Oku
+              </a>
             </div>
           </div>
         </div>
-
-        <div class="card bg-base-200 shadow-md">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">Webinar: Arabuluculukta Etkili Hesaplama</h2>
-            <p class="text-sm text-base-content/70">30 Ağustos 2025 - Saat 18:00</p>
-            <p>Arabuluculuk süreçlerinde doğru ve hızlı hesaplamanın püf noktalarını ele alacağımız ücretsiz webinarımıza davetlisiniz. DENKLEM uygulamasının pratik kullanımını da göstereceğiz.</p>
-            <div class="card-actions justify-end">
-               <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Kayıt Ol</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-md">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">DENKLEM App Store'da!</h2>
-            <p class="text-sm text-base-content/70">30 Mayıs 2025</p>
-            <p>DENKLEM uygulamamız App Store’da yayında! Arabuluculuk hesaplamalarınızı kolaylaştırmak için hemen indirin.</p>
-             <div class="card-actions justify-end">
-              <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">App Store</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </BaseLayout>

@@ -1,71 +1,40 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
 const pageTitle = "Announcements";
-const pageDescription = "Latest news, updates and important announcements about DENKLEM mobile application.";
+const pageDescription = "Latest news, updates and important announcements about Denklem mobile application.";
+
+const allItems = await getCollection('announcements', ({ data }: CollectionEntry<'announcements'>) => data.lang === 'en');
+const sorted = allItems.sort((a: CollectionEntry<'announcements'>, b: CollectionEntry<'announcements'>) => b.data.date.valueOf() - a.data.date.valueOf());
+
+interface AnnouncementItem { title: string; date: string; href: string; }
+const announcements: AnnouncementItem[] = sorted.map((entry: CollectionEntry<'announcements'>) => ({
+  title: entry.data.title,
+  date: entry.data.date.toLocaleDateString('en-GB', { day: '2-digit', month: 'long', year: 'numeric' }),
+  href: `/en/announcements/${entry.id.replace('en/', '').replace(/\.mdx?$/, '')}`,
+}));
 ---
 <BaseLayout title={pageTitle} description={pageDescription}>
   <div class="container mx-auto px-4 py-8">
     <h1 class="text-4xl font-bold mb-6 text-center">{pageTitle}</h1>
-    <div class="prose prose-lg max-w-none dark:prose-invert">
-      <p class="text-center mb-8">
-        You can follow the latest developments and announcements about the DENKLEM application here.
-      </p>
-      
-      <div class="space-y-6">
-                  <div class="card bg-base-200 shadow-md">
-                    <div class="card-body">
-                      <h2 class="card-title text-xl font-semibold">New Version Released: v2.5.5</h2>
-                      <p class="text-sm text-base-content/70">March 7, 2026</p>
-                      <p>VoiceOver support has been added to our application with this release. Don't forget to update your app. Our goal is to develop a technology that makes the application more accessible and empowering for visually impaired users. The true power of software is sometimes not about how many people use it, but who can use it.</p>
-                    </div>
-                  </div>
-                  <div class="card bg-base-200 shadow-md">
-                    <div class="card-body">
-                      <h2 class="card-title text-xl font-semibold">Exciting Developments Ahead: v2.1.0</h2>
-                      <p class="text-sm text-base-content/70">January 12, 2026</p>
-                      <p>With this upcoming release, special calculation features such as attorney fee calculation in mediation, rent determination and eviction mediation fee calculation, and reinstatement mediation fee calculation will be included in our next version. Our first goal is to add the attorney fee calculation method for mediation to our app in February 2026. We are carefully following all feedback. Please do not hesitate to share your feedback with us. Stay tuned for updates.</p>
-                    </div>
-                  </div>
-          <div class="card bg-base-200 shadow-md">
-            <div class="card-body">
-              <h2 class="card-title text-xl font-semibold">New Version Coming Soon: v2.0.0</h2>
-              <p class="text-sm text-base-content/70">January 12, 2026</p>
-              <p>The new version (v2.0.0) of the DENKLEM mobile application is coming very soon. In this release, the 2026 tariff is added alongside the 2025 tariff, allowing you to make calculations with more up-to-date data. The new version will be released with all its new features within January 2026. A new interface, new icon, new design, liquid glass style, faster and sharper calculations will all be available in this new version. Please follow updates for your app.</p>
-            </div>
-          </div>
+    <p class="text-center mb-8 text-base-content/70">
+      You can follow the latest developments and announcements about the Denklem application here.
+    </p>
+    <div class="space-y-6 max-w-3xl mx-auto">
+      {announcements.map((item) => (
         <div class="card bg-base-200 shadow-md">
           <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">New Version Released: v1.0.1</h2>
-            <p class="text-sm text-base-content/70">June 6, 2025</p>
-            <p>The new version (v1.0.1) of the DENKLEM mobile application has been released! This version includes performance improvements and minor fixes. Download or update now.</p>
-            <div class="card-actions justify-end">
-              <a href="/en/blog/new-version-v1-0-1-details" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Details</a>
+            <h2 class="card-title text-xl font-semibold">{item.title}</h2>
+            <p class="text-sm text-base-content/70">{item.date}</p>
+            <div class="card-actions justify-end mt-2">
+              <a href={item.href} class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl btn-scale">
+                Read More
+              </a>
             </div>
           </div>
         </div>
-
-        <div class="card bg-base-200 shadow-md">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">Webinar: Effective Calculation in Mediation</h2>
-            <p class="text-sm text-base-content/70">August 30, 2025 - 6:00 PM</p>
-            <p>You are invited to our free webinar where we will discuss the key points of accurate and fast calculation in mediation processes. We will also demonstrate the practical use of the DENKLEM application.</p>
-            <div class="card-actions justify-end">
-               <a href="#" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">Register</a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-md">
-          <div class="card-body">
-            <h2 class="card-title text-xl font-semibold">DENKLEM on App Store!</h2>
-            <p class="text-sm text-base-content/70">May 30, 2025</p>
-            <p>Our DENKLEM application is now live on the App Store! Download now to simplify your mediation calculations.</p>
-             <div class="card-actions justify-end">
-              <a href="https://apps.apple.com/tr/app/denklem/id6746580824" target="_blank" class="btn btn-outline border-base-content text-base-content bg-transparent rounded-xl flex items-center justify-center gap-2 btn-scale">App Store</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </BaseLayout>

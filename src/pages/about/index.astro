@@ -1,80 +1,42 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import homeScreen from '../../assets/home-screen.png?url';
-import disputeCategoryScreen from '../../assets/dispute-category-screen.png?url';
-import agreementStatusScreen from '../../assets/agreement-status-screen.png?url';
-import disputeTypeScreen from '../../assets/dispute-type-screen.png?url';
-import inputScreen from '../../assets/input-screen.png?url';
-import resultScreen from '../../assets/result-screen.png?url';
-import timeScreen from '../../assets/time-screen.png?url';
-import smmScreen from '../../assets/smm-screen.png?url';
-import FlipCard from '../../components/FlipCard.astro';
-import Typewriter from '../../components/Typewriter.astro';
+import { Image } from 'astro:assets';
+import screen1 from '../../assets/denklem_appstore_1.png';
+import screen2 from '../../assets/denklem_appstore_2.png';
+import screen3 from '../../assets/denklem_appstore_3.png';
+import screen4 from '../../assets/denklem_appstore_4.png';
+import screen5 from '../../assets/denklem_appstore_5.png';
+import screen6 from '../../assets/denklem_appstore_6.png';
 
-const pageTitle = "Kullanım Rehberi";
-const pageDescription = "Uygulamanın kullanım rehberi ve ekran tanımları";
+const pageTitle = "Uygulama";
+const pageDescription = "Denklem mobil uygulamasının özelliklerini ve ekranlarını keşfedin.";
+
+const screens = [
+  { image: screen1, alt: "Anında Arabuluculuk Ücreti Hesaplama" },
+  { image: screen2, alt: "Detaylı Hesaplama Dökümü" },
+  { image: screen3, alt: "Tüm Hesaplama Yöntemleri Tek Yerde" },
+  { image: screen4, alt: "Resmi Mevzuat ve Tarifeler" },
+  { image: screen5, alt: "Anlaşma ve Anlaşmama" },
+  { image: screen6, alt: "3 Dil, Koyu ve Açık Mod" },
+];
 ---
 <BaseLayout title={pageTitle} description={pageDescription}>
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-6 text-center">Kullanım Rehberi</h1>
-    
-    <!-- Typewriter description text -->
-    <Typewriter 
-      text="Ekran görüntülerine tıklayarak detaylı açıklamaları görüntüleyebilirsiniz"
-      typingSpeed={50}
-      startDelay={500}
-      cursorHideDelay={1000}
-    />
-    
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
-      <FlipCard
-        front={homeScreen}
-        alt="Giriş Ekranı"
-        title="Giriş Ekranı"
-        description={`Giriş ekranı, uygulamanın açılışında kullanıcıyı karşılayan ilk ekrandır. Kullanıcı, bu ekranda oturum açarak uygulamanın temel fonksiyonlarına erişim sağlar. Başarılı bir girişin ardından, alt navigasyon bardaki 'Ana Sayfa' sekmesine geçildiğinde kullanıcı doğrudan uyuşmazlık kategorisi ekranına yönlendirilir ve tekrar giriş ekranına dönmez. Ancak kullanıcı, navigasyon bardaki 'Mevzuat' veya 'Hakkında' sekmelerini ziyaret edip ardından tekrar 'Ana Sayfa'ya tıkladığında giriş ekranı yeniden görüntülenebilir.`}
-      />
-      <FlipCard
-        front={disputeCategoryScreen}
-        alt="Uyuşmazlık Kategorisi Ekranı"
-        title="Uyuşmazlık Kategorisi Ekranı"
-        description={`Bu ekranda, arabuluculuk konusu para olan uyuşmazlıkları kolayca seçebilir ve hesaplamalarınızı çoğunlukla bu yol üzerinden gerçekleştirebilirsiniz. Para içeren uyuşmazlıklar, kullanıcılar tarafından en çok tercih edilen seçenek olup, hesaplamalarınızda hızlı ve doğru sonuçlar almanızı sağlar. Bu bölümde yer alan Süre Hesaplama ve SMM Hesaplama butonları sayesinde farklı hesaplama modlarına hızlıca erişebilirsiniz.`}
-      />
-      <FlipCard
-        front={agreementStatusScreen}
-        alt="Anlaşma Durumu Ekranı"
-        title="Anlaşma Durumu Ekranı"
-        description={`Bu ekranda, arabuluculuk sürecinin 'anlaşma' veya 'anlaşmama' ile sonuçlandığını hızlıca belirleyebilmeniz için pratik bir seçim menüsü sunulmaktadır. Buton içerisindeki listeyi kaydırarak sürecin sonucunu seçebilirsiniz. Bu seçim, sonraki hesaplama ve işlemler için temel kriter olarak kullanılır.`}
-      />
-      <FlipCard
-        front={disputeTypeScreen}
-        alt="Uyuşmazlık Türü Ekranı"
-        title="Uyuşmazlık Türü Ekranı"
-        description={`Bu ekranda, toplamda yedi farklı uyuşmazlık türü için hesaplama başlatabilirsiniz. Özellikle “Kira Hukuku”, “Komşuluk Hakkı Hukuku” ve “Kat Mülkiyeti Kanunundan Kaynaklanan Uyuşmazlıklar”, hesaplama kriterleri aynı olduğu için tek bir buton üzerinden seçilebilmektedir. İlgili butonlardan birini seçerek, arabuluculuk sürecine uygun hesaplama kriterinizi kolayca oluşturabilirsiniz.`}
-      />
-      <FlipCard
-        front={inputScreen}
-        alt="Uyuşmazlık Bilgileri Ekranı"
-        title="Uyuşmazlık Bilgileri Ekranı"
-        description={`Bu ekranda, seçtiğiniz uyuşmazlık türü görüntülenir ve hesaplama işlemleri için gerekli bilgiler girilebilir. Anlaşma sağlandıysa, 'Anlaşılan Miktar' ve 'Taraf Sayısı' alanlarını doldurarak arabuluculuk ücretini hızlıca hesaplayabilirsiniz. Anlaşma sağlanamadıysa, yalnızca 'Taraf Sayısı' bilgisini girerek de hesaplama yapmanız mümkündür. Böylece her iki durumda da hızlı ve doğru sonuçlara ulaşabilirsiniz.`}
-      />
-      <FlipCard
-        front={resultScreen}
-        alt="Sonuç Ekranı"
-        title="Sonuç Ekranı"
-        description={`Bu ekranda, gerçekleştirdiğiniz hesaplamanın sonucu ayrıntılı olarak görüntülenir. Dava şartı uyuşmazlıklarda ve anlaşma sağlanamadığı durumlarda, arabuluculuk ücretiyle birlikte ilgili Serbest Meslek Makbuzu (SMM) da otomatik olarak düzenlenir ve gösterilir. Eğer süreç anlaşmayla sonuçlandıysa, seçilen uyuşmazlık türüne göre yalnızca arabuluculuk ücreti sonucu sunulur.`}
-      />
-      <FlipCard
-        front={timeScreen}
-        alt="Süre Hesaplama"
-        title="Süre Hesaplama"
-        description={`Süre Hesaplama ekranında, sistem varsayılan olarak bugünün tarihini seçili şekilde getirir. Dilerseniz tarih seçimi alanına tıklayarak, takvim üzerinden önceki veya sonraki bir tarihi seçebilirsiniz. Seçilen tarihe göre, ilgili uyuşmazlık türlerine ait tüm süreler otomatik olarak hesaplanır ve toplu şekilde ekranda görüntülenir.`}
-      />
-      <FlipCard
-        front={smmScreen}
-        alt="SMM Hesaplama Ekranı"
-        title="SMM Hesaplama Ekranı"
-        description={`SMM Hesaplama ekranında, hesaplanacak arabuluculuk ücreti ilgili alana girildikten sonra, istenilen hesaplama türü (vergi türü) seçilebilir. Sonuçlar, hem gerçek kişiler hem de tüzel kişiler için ayrı ayrı tablo halinde sunulur. Böylece, meslek makbuzu düzenlemesi için gerekli tüm bilgiler pratik ve anlaşılır şekilde kullanıcıya aktarılır.`}
-      />
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-4 text-center gradient-text">{pageTitle}</h1>
+    <p class="text-center text-base-content/60 mb-12 max-w-lg mx-auto text-sm">
+      Denklem uygulamasının tüm özelliklerini keşfedin.
+    </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {screens.map((screen) => (
+        <div class="app-screen-card">
+          <Image
+            src={screen.image}
+            alt={screen.alt}
+            class="w-full h-auto rounded-2xl"
+            loading="lazy"
+          />
+        </div>
+      ))}
     </div>
   </div>
 </BaseLayout>
